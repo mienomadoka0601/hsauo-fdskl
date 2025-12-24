@@ -1,0 +1,3 @@
+/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles/gitlite.dir
+/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles/edit_cache.dir
+/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles/rebuild_cache.dir
