@@ -1351,3 +1351,450 @@ init:
 Expected: []
 Actual: init
 
+samples/1-add-01.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', '']
+Actual: 
+samples/1-add-02.in: 
+add f.txt: 
+Expected: ['File does not exist.']
+Actual: File does not exist: f.txt
+
+samples/1-rm.in: 
+rm f.txt: 
+Expected: ['No reason to remove the file.']
+Actual: terminate called after throwing an instance of 'GitliteException'
+  what():  No reason to remove the file.
+Aborted (core dumped)
+
+samples/1-robust.in: 
+glorp foo: 
+Expected: ['No command with that name exists.']
+Actual: 
+samples/2-checkout-02.in: 
+log: 
+Expected: ['===', 'commit ([a-f0-9]+)', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'version 2 of wug.txt', '', '===', 'commit ([a-f0-9]+)', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'version 1 of wug.txt', '', '===', 'commit ([a-f0-9]+)', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'initial commit', '']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: 6563cb2e5e35096500ef81fd5802a00f4ec37ea8
+Aborted (core dumped)
+
+samples/2-find-01.in: 
+rm f.txt: 
+Expected: []
+Actual: Removed file from working directory: f.txt
+Marked file for deletion: f.txt
+
+samples/2-find-02.in: 
+rm f.txt: 
+Expected: []
+Actual: Removed file from working directory: f.txt
+Marked file for deletion: f.txt
+
+samples/2-global-log-01.in: 
+log: 
+Expected: ['(===[ ]*\\ncommit [a-f0-9]+[ ]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d) [-+](\\d\\d\\d\\d[ ]*\\n(?:.|\\n)*?(?=\\Z|\\n===))', '(===[ ]*\\ncommit [a-f0-9]+[ ]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d) [-+](\\d\\d\\d\\d[ ]*\\n(?:.|\\n)*?(?=\\Z|\\n===))', '(===[ ]*\\ncommit [a-f0-9]+[ ]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d) [-+](\\d\\d\\d\\d[ ]*\\n(?:.|\\n)*?(?=\\Z|\\n===))']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: 40bb32229c165f4a05747c0a3674320c257b79ef
+Aborted (core dumped)
+
+samples/2-log.in: 
+log: 
+Expected: ['===', 'commit [a-f0-9]+', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'added wug', '', '===', 'commit [a-f0-9]+', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'initial commit', '']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: e255daf9356803c54a704b5e3b4c9baa244fa402
+Aborted (core dumped)
+
+samples/3-checkout-03.in: 
+log: 
+Expected: ['===', 'commit ([a-f0-9]+)', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'version 2 of wug.txt', '', '===', 'commit ([a-f0-9]+)', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'version 1 of wug.txt', '', '===', 'commit ([a-f0-9]+)', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'initial commit', '']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: cb9211634c7967ee05f4c1be8d491b3b1cb51a04
+Aborted (core dumped)
+
+samples/3-checkout-04.in: 
+log: 
+Expected: ['===', 'commit ([a-f0-9]+)[ \\t]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'version 2 of wug.txt', '', '===', 'commit ([a-f0-9]+)[ \\t]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'version 1 of wug.txt', '', '===', 'commit ([a-f0-9]+)[ \\t]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'initial commit', '']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: 643b92e015a121895fc5fc249004a10b29f276ca
+Aborted (core dumped)
+
+samples/3-checkout-05.in: 
+log: 
+Expected: ['===', 'commit ([a-f0-9]{8})[a-f0-9]+', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'version 2 of wug.txt', '', '===', 'commit ([a-f0-9]{8})[a-f0-9]+', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'version 1 of wug.txt', '', '===', 'commit ([a-f0-9]{8})[a-f0-9]+', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'initial commit', '']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: 5749d04b05296723b5428e5d71c7741ee7bdc7cc
+Aborted (core dumped)
+
+samples/3-status-01.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', '']
+Actual: 
+samples/3-status-02.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', 'f.txt', 'g.txt', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', '']
+Actual: 
+samples/3-status-03.in: 
+rm f.txt: 
+Expected: []
+Actual: Removed file from working directory: f.txt
+Marked file for deletion: f.txt
+
+samples/3-status-04.in: 
+rm f.txt: 
+Expected: []
+Actual: Unstaged file: f.txt
+
+samples/3-status-05.in: 
+rm f.txt: 
+Expected: []
+Actual: Removed file from working directory: f.txt
+Marked file for deletion: f.txt
+
+samples/3-status-06.in: 
+rm f.txt: 
+Expected: []
+Actual: Marked file for deletion: f.txt
+
+samples/3-status-07.in: 
+status: 
+Expected: ['Not in an initialized Gitlite directory.']
+Actual: 
+samples/3-status.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', '']
+Actual: 
+samples/4-branch-02.in: 
+branch other: 
+Expected: ['A branch with that name already exists.']
+Actual: 
+samples/4-branch-03.in: 
+checkout master: 
+Expected: ['There is an untracked file in the way; delete it, or add and commit it first.']
+Actual: 
+samples/4-find-03.in: 
+rm f.txt: 
+Expected: []
+Actual: Removed file from working directory: f.txt
+Marked file for deletion: f.txt
+
+samples/4-global-log-02.in: 
+log: 
+Expected: ['(===[ ]*\\ncommit [a-f0-9]+[ ]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d) [-+](\\d\\d\\d\\d[ ]*\\n(?:.|\\n)*?(?=\\Z|\\n===))', '(===[ ]*\\ncommit [a-f0-9]+[ ]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d) [-+](\\d\\d\\d\\d[ ]*\\n(?:.|\\n)*?(?=\\Z|\\n===))', '(===[ ]*\\ncommit [a-f0-9]+[ ]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d) [-+](\\d\\d\\d\\d[ ]*\\n(?:.|\\n)*?(?=\\Z|\\n===))']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: 9a5911a3345122df681a3d2b33aac2d2cd7ee3da
+Aborted (core dumped)
+
+samples/4-reset-01.in: 
+rm g.txt: 
+Expected: []
+Actual: Removed file from working directory: g.txt
+Marked file for deletion: g.txt
+
+samples/4-reset-02.in: 
+rm g.txt: 
+Expected: []
+Actual: Removed file from working directory: g.txt
+Marked file for deletion: g.txt
+
+samples/4-rm-branch-01.in: 
+checkout other: 
+Expected: ['No such branch exists.']
+Actual: 
+samples/4-rm-branch-02.in: 
+rm-branch other: 
+Expected: ['Cannot remove the current branch.']
+Actual: 
+samples/5-merge-01.in: 
+rm g.txt: 
+Expected: []
+Actual: Removed file from working directory: g.txt
+Marked file for deletion: g.txt
+
+samples/5-merge-02.in: 
+rm g.txt: 
+Expected: []
+Actual: Removed file from working directory: g.txt
+Marked file for deletion: g.txt
+
+samples/5-merge-03.in: 
+rm g.txt: 
+Expected: []
+Actual: Removed file from working directory: g.txt
+Marked file for deletion: g.txt
+
+samples/5-merge-04.in: 
+rm g.txt: 
+Expected: []
+Actual: Removed file from working directory: g.txt
+Marked file for deletion: g.txt
+
+samples/5-merge-05.in: 
+rm f.txt: 
+Expected: []
+Actual: Removed file from working directory: f.txt
+Marked file for deletion: f.txt
+
+samples/5-merge-06.in: 
+rm f.txt: 
+Expected: []
+Actual: Removed file from working directory: f.txt
+Marked file for deletion: f.txt
+
+samples/5-merge-07.in: 
+merge master: 
+Expected: ['Encountered a merge conflict.']
+Actual: 
+samples/5-merge-08.in: 
+rm C.txt: 
+Expected: []
+Actual: Removed file from working directory: C.txt
+Marked file for deletion: C.txt
+
+samples/6-remote-01.in: 
+log: 
+Expected: ['===', 'commit ([a-f0-9]+)[ \\t]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'Two files', '', '===', 'commit ([a-f0-9]+)[ \\t]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'initial commit', '']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: 77b53b874a5ed7c7d6374b58fb63532d6e6bd9bf
+Aborted (core dumped)
+
+samples/6-remote-02.in: 
+log: 
+Expected: ['===', 'commit ([a-f0-9]+)[ \\t]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'Two files', '', '===', 'commit ([a-f0-9]+)[ \\t]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'initial commit', '']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: 77b53b874a5ed7c7d6374b58fb63532d6e6bd9bf
+Aborted (core dumped)
+
+samples/6-remote-03.in: 
+log: 
+Expected: ['===', 'commit ([a-f0-9]+)[ \\t]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'Two files', '', '===', 'commit ([a-f0-9]+)[ \\t]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'initial commit', '']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: 77b53b874a5ed7c7d6374b58fb63532d6e6bd9bf
+Aborted (core dumped)
+
+samples/6-status-05.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', 'f.txt', '']
+Actual: 
+samples/1-add-01.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', '']
+Actual: 
+samples/1-add-02.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', '']
+Actual: 
+samples/1-rm.in: 
+rm f.txt: 
+Expected: ['No reason to remove the file.']
+Actual: terminate called after throwing an instance of 'GitliteException'
+  what():  No reason to remove the file.
+Aborted (core dumped)
+
+samples/1-robust.in: 
+glorp foo: 
+Expected: ['No command with that name exists.']
+Actual: 
+samples/2-checkout-02.in: 
+log: 
+Expected: ['===', 'commit ([a-f0-9]+)', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'version 2 of wug.txt', '', '===', 'commit ([a-f0-9]+)', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'version 1 of wug.txt', '', '===', 'commit ([a-f0-9]+)', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'initial commit', '']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: baffb78ed678aeaa544bb8981e0a2d1c00e61684
+Aborted (core dumped)
+
+samples/2-find-01.in: 
+rm f.txt: 
+Expected: []
+Actual: Removed file from working directory: f.txt
+Marked file for deletion: f.txt
+
+samples/2-find-02.in: 
+rm f.txt: 
+Expected: []
+Actual: Removed file from working directory: f.txt
+Marked file for deletion: f.txt
+
+samples/2-global-log-01.in: 
+log: 
+Expected: ['(===[ ]*\\ncommit [a-f0-9]+[ ]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d) [-+](\\d\\d\\d\\d[ ]*\\n(?:.|\\n)*?(?=\\Z|\\n===))', '(===[ ]*\\ncommit [a-f0-9]+[ ]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d) [-+](\\d\\d\\d\\d[ ]*\\n(?:.|\\n)*?(?=\\Z|\\n===))', '(===[ ]*\\ncommit [a-f0-9]+[ ]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d) [-+](\\d\\d\\d\\d[ ]*\\n(?:.|\\n)*?(?=\\Z|\\n===))']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: 43d70808f4634c5f5161cdb683748aa479ee83bd
+Aborted (core dumped)
+
+samples/2-log.in: 
+log: 
+Expected: ['===', 'commit [a-f0-9]+', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'added wug', '', '===', 'commit [a-f0-9]+', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'initial commit', '']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: b2a2e93b48bb6e3560fd839167eb7de40d56ce72
+Aborted (core dumped)
+
+samples/3-checkout-03.in: 
+log: 
+Expected: ['===', 'commit ([a-f0-9]+)', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'version 2 of wug.txt', '', '===', 'commit ([a-f0-9]+)', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'version 1 of wug.txt', '', '===', 'commit ([a-f0-9]+)', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'initial commit', '']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: 6209349dff1cdf56a37ede772c6c3bce3c1045e3
+Aborted (core dumped)
+
+samples/3-checkout-04.in: 
+log: 
+Expected: ['===', 'commit ([a-f0-9]+)[ \\t]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'version 2 of wug.txt', '', '===', 'commit ([a-f0-9]+)[ \\t]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'version 1 of wug.txt', '', '===', 'commit ([a-f0-9]+)[ \\t]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'initial commit', '']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: 38ba90f17af97df9a22f587d67921e2ae4a33ce0
+Aborted (core dumped)
+
+samples/3-checkout-05.in: 
+log: 
+Expected: ['===', 'commit ([a-f0-9]{8})[a-f0-9]+', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'version 2 of wug.txt', '', '===', 'commit ([a-f0-9]{8})[a-f0-9]+', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'version 1 of wug.txt', '', '===', 'commit ([a-f0-9]{8})[a-f0-9]+', 'Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'initial commit', '']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: 2fc876c7b60423dea2f569dbb4d633fd9859c1d0
+Aborted (core dumped)
+
+samples/3-status-01.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', '']
+Actual: 
+samples/3-status-02.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', 'f.txt', 'g.txt', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', '']
+Actual: 
+samples/3-status-03.in: 
+rm f.txt: 
+Expected: []
+Actual: Removed file from working directory: f.txt
+Marked file for deletion: f.txt
+
+samples/3-status-04.in: 
+rm f.txt: 
+Expected: []
+Actual: Unstaged file: f.txt
+
+samples/3-status-05.in: 
+rm f.txt: 
+Expected: []
+Actual: Removed file from working directory: f.txt
+Marked file for deletion: f.txt
+
+samples/3-status-06.in: 
+rm f.txt: 
+Expected: []
+Actual: Marked file for deletion: f.txt
+
+samples/3-status-07.in: 
+status: 
+Expected: ['Not in an initialized Gitlite directory.']
+Actual: 
+samples/3-status.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', '']
+Actual: 
+samples/4-branch-02.in: 
+branch other: 
+Expected: ['A branch with that name already exists.']
+Actual: 
+samples/4-branch-03.in: 
+checkout master: 
+Expected: ['There is an untracked file in the way; delete it, or add and commit it first.']
+Actual: 
+samples/4-find-03.in: 
+rm f.txt: 
+Expected: []
+Actual: Removed file from working directory: f.txt
+Marked file for deletion: f.txt
+
+samples/4-global-log-02.in: 
+log: 
+Expected: ['(===[ ]*\\ncommit [a-f0-9]+[ ]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d) [-+](\\d\\d\\d\\d[ ]*\\n(?:.|\\n)*?(?=\\Z|\\n===))', '(===[ ]*\\ncommit [a-f0-9]+[ ]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d) [-+](\\d\\d\\d\\d[ ]*\\n(?:.|\\n)*?(?=\\Z|\\n===))', '(===[ ]*\\ncommit [a-f0-9]+[ ]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d) [-+](\\d\\d\\d\\d[ ]*\\n(?:.|\\n)*?(?=\\Z|\\n===))']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: e3035986561c7ea8833da71d78dd5a1e23de2708
+Aborted (core dumped)
+
+samples/4-reset-01.in: 
+rm g.txt: 
+Expected: []
+Actual: Removed file from working directory: g.txt
+Marked file for deletion: g.txt
+
+samples/4-reset-02.in: 
+rm g.txt: 
+Expected: []
+Actual: Removed file from working directory: g.txt
+Marked file for deletion: g.txt
+
+samples/4-rm-branch-01.in: 
+checkout other: 
+Expected: ['No such branch exists.']
+Actual: 
+samples/4-rm-branch-02.in: 
+rm-branch other: 
+Expected: ['Cannot remove the current branch.']
+Actual: 
+samples/5-merge-01.in: 
+rm g.txt: 
+Expected: []
+Actual: Removed file from working directory: g.txt
+Marked file for deletion: g.txt
+
+samples/5-merge-02.in: 
+rm g.txt: 
+Expected: []
+Actual: Removed file from working directory: g.txt
+Marked file for deletion: g.txt
+
+samples/5-merge-03.in: 
+rm g.txt: 
+Expected: []
+Actual: Removed file from working directory: g.txt
+Marked file for deletion: g.txt
+
+samples/5-merge-04.in: 
+rm g.txt: 
+Expected: []
+Actual: Removed file from working directory: g.txt
+Marked file for deletion: g.txt
+
+samples/5-merge-05.in: 
+rm f.txt: 
+Expected: []
+Actual: Removed file from working directory: f.txt
+Marked file for deletion: f.txt
+
+samples/5-merge-06.in: 
+rm f.txt: 
+Expected: []
+Actual: Removed file from working directory: f.txt
+Marked file for deletion: f.txt
+
+samples/5-merge-07.in: 
+merge master: 
+Expected: ['Encountered a merge conflict.']
+Actual: 
+samples/5-merge-08.in: 
+rm C.txt: 
+Expected: []
+Actual: Removed file from working directory: C.txt
+Marked file for deletion: C.txt
+
+samples/6-remote-01.in: 
+log: 
+Expected: ['===', 'commit ([a-f0-9]+)[ \\t]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'Two files', '', '===', 'commit ([a-f0-9]+)[ \\t]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'initial commit', '']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: b71ef82061b9963054dbe9dd834b924aaa5482f9
+Aborted (core dumped)
+
+samples/6-remote-02.in: 
+log: 
+Expected: ['===', 'commit ([a-f0-9]+)[ \\t]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'Two files', '', '===', 'commit ([a-f0-9]+)[ \\t]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'initial commit', '']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: c4e9815afb79bb880de86c28a81c9b4077b33987
+Aborted (core dumped)
+
+samples/6-remote-03.in: 
+log: 
+Expected: ['===', 'commit ([a-f0-9]+)[ \\t]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'Two files', '', '===', 'commit ([a-f0-9]+)[ \\t]*\\n(?:Merge:\\s+[0-9a-f]{7}\\s+[0-9a-f]{7}[ ]*\\n)?Date: \\w\\w\\w \\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\d\\d\\d\\d [-+]\\d\\d\\d\\d', 'initial commit', '']
+Actual: terminate called after throwing an instance of 'std::runtime_error'
+  what():  Commit not found: e92e8015372e21f91eb4fdb21287ed9d4da2d4d4
+Aborted (core dumped)
+
+samples/6-status-05.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', 'f.txt', '']
+Actual: 

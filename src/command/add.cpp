@@ -4,7 +4,7 @@
 void AddCommand::add(const std::string& filename) {
     // Implementation of the add command goes here
     if(!Utils::isFile(filename)) {
-        Utils::exitWithMessage("File does not exist: " + filename);
+        Utils::exitWithMessage("File does not exist.");
     }
 
     std::string current_content=Utils::readContentsAsString(filename);
