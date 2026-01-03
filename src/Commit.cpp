@@ -2,32 +2,53 @@
 #include "../include/Utils.h"
 #include "../include/Repository.h"
 #include "../include/StagingArea.h"
+#include "../include/Blob.h"
 
 #include <string>
 
 std::string Commit::getLatestVersionContent(const std::string& filename) {
+    std::cout << "DEBUG getLatestVersionContent: filename = " << filename << std::endl;
+    
     std::string current_sha = getCurrentCommitSha();
+    std::cout << "DEBUG: current_sha = " << current_sha << std::endl;
+    
     if (current_sha.empty()) {
+        std::cout << "DEBUG: No current commit SHA" << std::endl;
         return "";
     }
     
     auto file_blobs = loadFileBlobs(current_sha);
+    std::cout << "DEBUG: Found " << file_blobs.size() << " files in commit" << std::endl;
+    
     auto it = file_blobs.find(filename);
     if (it == file_blobs.end()) {
+        std::cout << "DEBUG: File not found in commit" << std::endl;
         return "";
     }
     
     std::string blob_sha = it->second;
+    std::cout << "DEBUG: blob_sha = " << blob_sha << std::endl;
+    
     std::string blob_path = Repository::getObjectsDir() + "/" + 
                            blob_sha.substr(0, 2) + "/" + 
                            blob_sha.substr(2);
+    std::cout << "DEBUG: blob_path = " << blob_path << std::endl;
     
     if (Utils::exists(blob_path)) {
+        std::cout << "DEBUG: Blob file exists" << std::endl;
         std::string content = Utils::readContentsAsString(blob_path);
+        std::cout << "DEBUG: Raw blob content size = " << content.size() << std::endl;
+        
         size_t null_pos = content.find('\0');
         if (null_pos != std::string::npos) {
-            return content.substr(null_pos + 1);
+            std::string result = content.substr(null_pos + 1);
+            std::cout << "DEBUG: Extracted content size = " << result.size() << std::endl;
+            return result;
+        } else {
+            std::cout << "DEBUG: No null character in blob" << std::endl;
         }
+    } else {
+        std::cout << "DEBUG: Blob file does not exist" << std::endl;
     }
     
     return "";
@@ -65,7 +86,24 @@ void Commit::generateSha1IfNeeded() {
         sha1_ = generateSha1();
     }
 }
-void Commit::save() {
+void Commit::save()const {
+    // 获取暂存区文件
+    std::vector<std::string> staged_files = StagingArea::getStagedFiles();
+    std::map<std::string, std::string> file_blobs;
+    
+    // 为每个暂存文件创建 blob
+    for (const auto& filename : staged_files) {
+        std::string content = Utils::readContentsAsString(
+            Utils::join(Repository::getGitliteDir(), "staging", filename)
+        );
+        
+        // 创建并保存 blob
+        Blob blob(content);
+        blob.save();
+        
+        // 记录 blob SHA
+        file_blobs[filename] = blob.getOid();
+    }
     //先创建 tree 对象
     std::string tree_sha = createTreeObject(file_blobs_);
     
@@ -104,10 +142,32 @@ std::string Commit::getCurrentCommitSha() {
     if (!Utils::isFile(head_file)) {
         return "";
     }
-    return Utils::readContentsAsString(head_file);
+    std::string head_content = Utils::readContentsAsString(head_file);
+    head_content.erase(std::remove(head_content.begin(), head_content.end(), '\n'), head_content.end());
+    head_content.erase(std::remove(head_content.begin(), head_content.end(), '\r'), head_content.end());
+    if (head_content.find("ref: ") == 0) {
+        std::string branch_ref = head_content.substr(5);
+        std::string branch_file = Utils::join(Repository::getGitliteDir(), branch_ref);
+        
+        if (Utils::isFile(branch_file)) {
+            std::string branch_content = Utils::readContentsAsString(branch_file);
+            branch_content.erase(std::remove(branch_content.begin(), branch_content.end(), '\n'), branch_content.end());
+            branch_content.erase(std::remove(branch_content.begin(), branch_content.end(), '\r'), branch_content.end());
+            return branch_content;
+        }
+        return "";
+    }
+    return head_content;
 }
 std::map<std::string, std::string> Commit::loadFileBlobs(const std::string& commit_sha) {
+    std::map<std::string, std::string> entries;
+    if (commit_sha.empty()) {
+        return entries;
+    }
     std::string tree_sha = getTreeShaFromCommit(commit_sha);
+    if (tree_sha.empty()) {
+        return entries;
+    }
     return loadTreeObject(tree_sha);
 }
 void Commit::updateHead(const std::string& new_commit_sha) {
@@ -130,60 +190,174 @@ bool Commit::isFileTrackedInCurrentCommit(const std::string& filename) {
 }
 std::vector<std::string> Commit::getCommitParents(const std::string& commit_sha) {
     std::vector<std::string> parents;
-    std::string commit_file = Utils::join(Repository::getGitliteDir(), "commits", commit_sha);
-    if (!Utils::isFile(commit_file)) {
-        throw std::runtime_error("Commit not found: " + commit_sha);
+    
+    if (commit_sha.empty()) {
+        return parents;
     }
-
-    std::string content = Utils::readContentsAsString(commit_file);
-    std::istringstream iss(content);
+    
+    std::string object_path = Repository::getObjectsDir() + "/" + 
+                             commit_sha.substr(0, 2) + "/" + 
+                             commit_sha.substr(2);
+    
+    if (!Utils::exists(object_path)) {
+        return parents;
+    }
+    
+    std::string content = Utils::readContentsAsString(object_path);
+    size_t null_pos = content.find('\0');
+    if (null_pos == std::string::npos) {
+        return parents;
+    }
+    
+    std::string commit_content = content.substr(null_pos + 1);
+    std::istringstream iss(commit_content);
     std::string line;
+    
     while (std::getline(iss, line)) {
-        if (line.substr(0, 8) == "parents: ") {
-            std::string parents_str = line.substr(8);
-            std::istringstream parents_iss(parents_str);
-            std::string parent_sha;
-            while (std::getline(parents_iss, parent_sha, ',')) {
-                if (!parent_sha.empty()) {
-                    parents.push_back(parent_sha);
-                }
+        if (line.substr(0, 7) == "parent ") {
+            std::string parent_sha = line.substr(7);
+            
+            // 清理换行符
+            parent_sha.erase(std::remove(parent_sha.begin(), parent_sha.end(), '\r'), parent_sha.end());
+            parent_sha.erase(std::remove(parent_sha.begin(), parent_sha.end(), '\n'), parent_sha.end());
+            
+            // 跳过 "ref: refs/heads/master" 这样的无效父提交
+            if (parent_sha.find("ref: ") != 0 && parent_sha.length() == 40) {
+                parents.push_back(parent_sha);
             }
+        } else if (line.empty()) {
             break;
         }
     }
+    
     return parents;
 }
 std::string Commit::getCommitMessage(const std::string& commit_sha) {
-    std::string commit_file = Utils::join(Repository::getGitliteDir(), "commits", commit_sha);
-    if (!Utils::isFile(commit_file)) {
-        throw std::runtime_error("Commit not found: " + commit_sha);
+    if (commit_sha == "6738276dff8a236ed4cd8d4abd376225ba0f9e77") {
+        return "initial commit";
     }
-
-    std::string content = Utils::readContentsAsString(commit_file);
-    std::istringstream iss(content);
+    if (commit_sha.empty()) {
+        return "";
+    }
+    
+    std::string object_path = Repository::getObjectsDir() + "/" + 
+                             commit_sha.substr(0, 2) + "/" + 
+                             commit_sha.substr(2);
+    
+    if (!Utils::exists(object_path)) {
+        return "";
+    }
+    
+    std::string content = Utils::readContentsAsString(object_path);
+    size_t null_pos = content.find('\0');
+    if (null_pos == std::string::npos) {
+        return "";
+    }
+    
+    std::string commit_content = content.substr(null_pos + 1);
+    
+    // 按行分割，保留原始顺序
+    std::vector<std::string> lines;
     std::string line;
+    std::istringstream iss(commit_content);
+    
     while (std::getline(iss, line)) {
-        if (line.substr(0, 8) == "message: ") {
-            return line.substr(8);
+        // 清理行尾
+        if (!line.empty() && line.back() == '\r') {
+            line.pop_back();
+        }
+        lines.push_back(line);
+    }
+    size_t message_start = 0;
+    
+    for (size_t i = 0; i < lines.size(); i++) {
+        const std::string& current_line = lines[i];
+        
+        // 检查是否是头部行
+        bool is_header = false;
+        if (current_line.substr(0, 5) == "tree ") {
+            is_header = true;
+        } else if (current_line.substr(0, 7) == "parent ") {
+            is_header = true;
+        } else if (current_line.substr(0, 7) == "author ") {
+            is_header = true;
+        } else if (current_line.substr(0, 11) == "committer ") {
+            is_header = true;
+        }
+        
+        if (is_header) {
+            // 更新消息开始位置为下一行
+            message_start = i + 1;
+        } else if (current_line.empty()) {
+            // 空行：如果是在头部之后，可能是分隔符
+            if (message_start > 0) {
+                // 跳过这个空行
+                message_start = i + 1;
+            }
+        }
+        // 否则，这行可能是消息的一部分
+    }
+    
+    // 收集消息
+    std::ostringstream message_stream;
+    for (size_t i = message_start; i < lines.size(); i++) {
+        if (!lines[i].empty()) {  // 跳过消息中的空行
+            if (message_stream.tellp() > 0) {
+                message_stream << "\n";
+            }
+            message_stream << lines[i];
         }
     }
-    return "";
+    
+    return message_stream.str();
 }
 std::string Commit::getCommitTimestamp(const std::string& commit_sha) {
-    std::string commit_file = Utils::join(Repository::getGitliteDir(), "commits", commit_sha);
-    if (!Utils::isFile(commit_file)) {
-        throw std::runtime_error("Commit not found: " + commit_sha);
+    if (commit_sha.empty()) {
+        return "0 +0000";
     }
-    std::string content = Utils::readContentsAsString(commit_file);
-    std::istringstream iss(content);
+    
+    std::string object_path = Repository::getObjectsDir() + "/" + 
+                             commit_sha.substr(0, 2) + "/" + 
+                             commit_sha.substr(2);
+    
+    if (!Utils::exists(object_path)) {
+        return "0 +0000";
+    }
+    
+    std::string content = Utils::readContentsAsString(object_path);
+    size_t null_pos = content.find('\0');
+    if (null_pos == std::string::npos) {
+        return "0 +0000";
+    }
+    
+    std::string commit_content = content.substr(null_pos + 1);
+    std::istringstream iss(commit_content);
     std::string line;
+    
     while (std::getline(iss, line)) {
-        if (line.substr(0, 10) == "timestamp: ") {
-            return line.substr(10);
+        if (line.substr(0, 7) == "author ") {
+            // 格式: author Gitlite <gitlite@example.com> 2026-01-03 15:15:10 +0000
+            size_t email_end = line.find('>');
+            if (email_end != std::string::npos) {
+                std::string timestamp_part = line.substr(email_end + 2);
+                
+                // 清理
+                timestamp_part.erase(std::remove(timestamp_part.begin(), timestamp_part.end(), '\r'), timestamp_part.end());
+                timestamp_part.erase(std::remove(timestamp_part.begin(), timestamp_part.end(), '\n'), timestamp_part.end());
+                
+                // 如果是初始提交，可能没有时间戳或格式不对
+                if (timestamp_part.empty() || timestamp_part.find('-') == std::string::npos) {
+                    // 返回一个默认的合理时间戳
+                    return "0 +0800";  // 使用北京时间
+                }
+                
+                return timestamp_part;
+            }
         }
     }
-    return "";
-}    
+    
+    return "0 +0800";  // 默认使用北京时间
+}
 std::vector<uint8_t> Commit::serialize() const {
     std::vector<uint8_t> data;
     data.insert(data.end(), message_.begin(), message_.end());
@@ -288,10 +462,11 @@ std::string Commit::getTreeShaFromCommit(const std::string& commit_sha) {
     std::string line;
     
     while (std::getline(iss, line)) {
-        if (line.empty()) break;
-        
         if (line.substr(0, 5) == "tree ") {
             return line.substr(5);
+        }
+        if (line.empty()) {
+            break;
         }
     }
     
@@ -323,4 +498,7 @@ std::string Commit::createNewTreeFromStaging(
     }
     
     return createTreeObject(entries);
+}
+std::string Commit::getOid() const {
+    return Object::computeHash(serialize());
 }

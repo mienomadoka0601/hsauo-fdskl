@@ -14,6 +14,10 @@ public:
     static void globalLog();
     static void rm(const std::string& filename);
     static void log();
+    static void status();
+    static void checkoutBranch(const std::string& filename);
+    static void checkoutFile(const std::string& filename);
+    static void checkoutFileInCommit(const std::string& commit_id, const std::string& filename);
 };
 
 #endif // SOMEOBJ_H

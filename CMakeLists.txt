@@ -40,7 +40,8 @@ set(CORE_SOURCES
     src/StagingArea.cpp
     src/Commit.cpp
     src/SomeObj.cpp
-
+    src/object.cpp
+    src/Tree.cpp
 )
 
 # 工具类源文件（Utils、GitliteException 等）
@@ -56,6 +57,20 @@ set(COMMAND_SOURCES
     src/command/log.cpp
     src/command/init.cpp
     src/command/add.cpp
+    src/command/status.cpp
+    src/command/add-remote.cpp
+    src/command/rm-remote.cpp
+    src/command/branch.cpp
+    src/command/checkout.cpp
+    src/command/fetch.cpp
+    src/command/global-log.cpp
+    src/command/merge.cpp
+    src/command/pull.cpp
+    src/command/push.cpp
+    src/command/remote.cpp
+    src/command/reset.cpp
+    src/command/rm-branch.cpp
+    src/command/find.cpp
 )
 
 # 主程序入口

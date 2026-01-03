@@ -251,4 +251,8 @@ CMakeFiles/gitlite.dir/src/SomeObj.cpp.o: \
  /usr/include/c++/13/bits/fs_ops.h \
  /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/rm.h \
  /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/log.h \
- /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/global-log.h
+ /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/global-log.h \
+ /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/status.h \
+ /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/find.h \
+ /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/rm-remote.h \
+ /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/checkout.h

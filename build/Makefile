@@ -297,6 +297,30 @@ src/StagingArea.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/StagingArea.cpp.s
 .PHONY : src/StagingArea.cpp.s
 
+src/Tree.o: src/Tree.cpp.o
+.PHONY : src/Tree.o
+
+# target to build an object file
+src/Tree.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/Tree.cpp.o
+.PHONY : src/Tree.cpp.o
+
+src/Tree.i: src/Tree.cpp.i
+.PHONY : src/Tree.i
+
+# target to preprocess a source file
+src/Tree.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/Tree.cpp.i
+.PHONY : src/Tree.cpp.i
+
+src/Tree.s: src/Tree.cpp.s
+.PHONY : src/Tree.s
+
+# target to generate assembly for a file
+src/Tree.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/Tree.cpp.s
+.PHONY : src/Tree.cpp.s
+
 src/Utils.o: src/Utils.cpp.o
 .PHONY : src/Utils.o
 
@@ -320,6 +344,30 @@ src/Utils.s: src/Utils.cpp.s
 src/Utils.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/Utils.cpp.s
 .PHONY : src/Utils.cpp.s
+
+src/command/add-remote.o: src/command/add-remote.cpp.o
+.PHONY : src/command/add-remote.o
+
+# target to build an object file
+src/command/add-remote.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/add-remote.cpp.o
+.PHONY : src/command/add-remote.cpp.o
+
+src/command/add-remote.i: src/command/add-remote.cpp.i
+.PHONY : src/command/add-remote.i
+
+# target to preprocess a source file
+src/command/add-remote.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/add-remote.cpp.i
+.PHONY : src/command/add-remote.cpp.i
+
+src/command/add-remote.s: src/command/add-remote.cpp.s
+.PHONY : src/command/add-remote.s
+
+# target to generate assembly for a file
+src/command/add-remote.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/add-remote.cpp.s
+.PHONY : src/command/add-remote.cpp.s
 
 src/command/add.o: src/command/add.cpp.o
 .PHONY : src/command/add.o
@@ -345,6 +393,54 @@ src/command/add.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/add.cpp.s
 .PHONY : src/command/add.cpp.s
 
+src/command/branch.o: src/command/branch.cpp.o
+.PHONY : src/command/branch.o
+
+# target to build an object file
+src/command/branch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/branch.cpp.o
+.PHONY : src/command/branch.cpp.o
+
+src/command/branch.i: src/command/branch.cpp.i
+.PHONY : src/command/branch.i
+
+# target to preprocess a source file
+src/command/branch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/branch.cpp.i
+.PHONY : src/command/branch.cpp.i
+
+src/command/branch.s: src/command/branch.cpp.s
+.PHONY : src/command/branch.s
+
+# target to generate assembly for a file
+src/command/branch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/branch.cpp.s
+.PHONY : src/command/branch.cpp.s
+
+src/command/checkout.o: src/command/checkout.cpp.o
+.PHONY : src/command/checkout.o
+
+# target to build an object file
+src/command/checkout.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/checkout.cpp.o
+.PHONY : src/command/checkout.cpp.o
+
+src/command/checkout.i: src/command/checkout.cpp.i
+.PHONY : src/command/checkout.i
+
+# target to preprocess a source file
+src/command/checkout.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/checkout.cpp.i
+.PHONY : src/command/checkout.cpp.i
+
+src/command/checkout.s: src/command/checkout.cpp.s
+.PHONY : src/command/checkout.s
+
+# target to generate assembly for a file
+src/command/checkout.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/checkout.cpp.s
+.PHONY : src/command/checkout.cpp.s
+
 src/command/commit.o: src/command/commit.cpp.o
 .PHONY : src/command/commit.o
 
@@ -368,6 +464,78 @@ src/command/commit.s: src/command/commit.cpp.s
 src/command/commit.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/commit.cpp.s
 .PHONY : src/command/commit.cpp.s
+
+src/command/fetch.o: src/command/fetch.cpp.o
+.PHONY : src/command/fetch.o
+
+# target to build an object file
+src/command/fetch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/fetch.cpp.o
+.PHONY : src/command/fetch.cpp.o
+
+src/command/fetch.i: src/command/fetch.cpp.i
+.PHONY : src/command/fetch.i
+
+# target to preprocess a source file
+src/command/fetch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/fetch.cpp.i
+.PHONY : src/command/fetch.cpp.i
+
+src/command/fetch.s: src/command/fetch.cpp.s
+.PHONY : src/command/fetch.s
+
+# target to generate assembly for a file
+src/command/fetch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/fetch.cpp.s
+.PHONY : src/command/fetch.cpp.s
+
+src/command/find.o: src/command/find.cpp.o
+.PHONY : src/command/find.o
+
+# target to build an object file
+src/command/find.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/find.cpp.o
+.PHONY : src/command/find.cpp.o
+
+src/command/find.i: src/command/find.cpp.i
+.PHONY : src/command/find.i
+
+# target to preprocess a source file
+src/command/find.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/find.cpp.i
+.PHONY : src/command/find.cpp.i
+
+src/command/find.s: src/command/find.cpp.s
+.PHONY : src/command/find.s
+
+# target to generate assembly for a file
+src/command/find.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/find.cpp.s
+.PHONY : src/command/find.cpp.s
+
+src/command/global-log.o: src/command/global-log.cpp.o
+.PHONY : src/command/global-log.o
+
+# target to build an object file
+src/command/global-log.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/global-log.cpp.o
+.PHONY : src/command/global-log.cpp.o
+
+src/command/global-log.i: src/command/global-log.cpp.i
+.PHONY : src/command/global-log.i
+
+# target to preprocess a source file
+src/command/global-log.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/global-log.cpp.i
+.PHONY : src/command/global-log.cpp.i
+
+src/command/global-log.s: src/command/global-log.cpp.s
+.PHONY : src/command/global-log.s
+
+# target to generate assembly for a file
+src/command/global-log.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/global-log.cpp.s
+.PHONY : src/command/global-log.cpp.s
 
 src/command/init.o: src/command/init.cpp.o
 .PHONY : src/command/init.o
@@ -417,6 +585,174 @@ src/command/log.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/log.cpp.s
 .PHONY : src/command/log.cpp.s
 
+src/command/merge.o: src/command/merge.cpp.o
+.PHONY : src/command/merge.o
+
+# target to build an object file
+src/command/merge.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/merge.cpp.o
+.PHONY : src/command/merge.cpp.o
+
+src/command/merge.i: src/command/merge.cpp.i
+.PHONY : src/command/merge.i
+
+# target to preprocess a source file
+src/command/merge.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/merge.cpp.i
+.PHONY : src/command/merge.cpp.i
+
+src/command/merge.s: src/command/merge.cpp.s
+.PHONY : src/command/merge.s
+
+# target to generate assembly for a file
+src/command/merge.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/merge.cpp.s
+.PHONY : src/command/merge.cpp.s
+
+src/command/pull.o: src/command/pull.cpp.o
+.PHONY : src/command/pull.o
+
+# target to build an object file
+src/command/pull.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/pull.cpp.o
+.PHONY : src/command/pull.cpp.o
+
+src/command/pull.i: src/command/pull.cpp.i
+.PHONY : src/command/pull.i
+
+# target to preprocess a source file
+src/command/pull.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/pull.cpp.i
+.PHONY : src/command/pull.cpp.i
+
+src/command/pull.s: src/command/pull.cpp.s
+.PHONY : src/command/pull.s
+
+# target to generate assembly for a file
+src/command/pull.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/pull.cpp.s
+.PHONY : src/command/pull.cpp.s
+
+src/command/push.o: src/command/push.cpp.o
+.PHONY : src/command/push.o
+
+# target to build an object file
+src/command/push.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/push.cpp.o
+.PHONY : src/command/push.cpp.o
+
+src/command/push.i: src/command/push.cpp.i
+.PHONY : src/command/push.i
+
+# target to preprocess a source file
+src/command/push.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/push.cpp.i
+.PHONY : src/command/push.cpp.i
+
+src/command/push.s: src/command/push.cpp.s
+.PHONY : src/command/push.s
+
+# target to generate assembly for a file
+src/command/push.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/push.cpp.s
+.PHONY : src/command/push.cpp.s
+
+src/command/remote.o: src/command/remote.cpp.o
+.PHONY : src/command/remote.o
+
+# target to build an object file
+src/command/remote.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/remote.cpp.o
+.PHONY : src/command/remote.cpp.o
+
+src/command/remote.i: src/command/remote.cpp.i
+.PHONY : src/command/remote.i
+
+# target to preprocess a source file
+src/command/remote.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/remote.cpp.i
+.PHONY : src/command/remote.cpp.i
+
+src/command/remote.s: src/command/remote.cpp.s
+.PHONY : src/command/remote.s
+
+# target to generate assembly for a file
+src/command/remote.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/remote.cpp.s
+.PHONY : src/command/remote.cpp.s
+
+src/command/reset.o: src/command/reset.cpp.o
+.PHONY : src/command/reset.o
+
+# target to build an object file
+src/command/reset.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/reset.cpp.o
+.PHONY : src/command/reset.cpp.o
+
+src/command/reset.i: src/command/reset.cpp.i
+.PHONY : src/command/reset.i
+
+# target to preprocess a source file
+src/command/reset.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/reset.cpp.i
+.PHONY : src/command/reset.cpp.i
+
+src/command/reset.s: src/command/reset.cpp.s
+.PHONY : src/command/reset.s
+
+# target to generate assembly for a file
+src/command/reset.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/reset.cpp.s
+.PHONY : src/command/reset.cpp.s
+
+src/command/rm-branch.o: src/command/rm-branch.cpp.o
+.PHONY : src/command/rm-branch.o
+
+# target to build an object file
+src/command/rm-branch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/rm-branch.cpp.o
+.PHONY : src/command/rm-branch.cpp.o
+
+src/command/rm-branch.i: src/command/rm-branch.cpp.i
+.PHONY : src/command/rm-branch.i
+
+# target to preprocess a source file
+src/command/rm-branch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/rm-branch.cpp.i
+.PHONY : src/command/rm-branch.cpp.i
+
+src/command/rm-branch.s: src/command/rm-branch.cpp.s
+.PHONY : src/command/rm-branch.s
+
+# target to generate assembly for a file
+src/command/rm-branch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/rm-branch.cpp.s
+.PHONY : src/command/rm-branch.cpp.s
+
+src/command/rm-remote.o: src/command/rm-remote.cpp.o
+.PHONY : src/command/rm-remote.o
+
+# target to build an object file
+src/command/rm-remote.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/rm-remote.cpp.o
+.PHONY : src/command/rm-remote.cpp.o
+
+src/command/rm-remote.i: src/command/rm-remote.cpp.i
+.PHONY : src/command/rm-remote.i
+
+# target to preprocess a source file
+src/command/rm-remote.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/rm-remote.cpp.i
+.PHONY : src/command/rm-remote.cpp.i
+
+src/command/rm-remote.s: src/command/rm-remote.cpp.s
+.PHONY : src/command/rm-remote.s
+
+# target to generate assembly for a file
+src/command/rm-remote.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/rm-remote.cpp.s
+.PHONY : src/command/rm-remote.cpp.s
+
 src/command/rm.o: src/command/rm.cpp.o
 .PHONY : src/command/rm.o
 
@@ -440,6 +776,54 @@ src/command/rm.s: src/command/rm.cpp.s
 src/command/rm.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/rm.cpp.s
 .PHONY : src/command/rm.cpp.s
+
+src/command/status.o: src/command/status.cpp.o
+.PHONY : src/command/status.o
+
+# target to build an object file
+src/command/status.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/status.cpp.o
+.PHONY : src/command/status.cpp.o
+
+src/command/status.i: src/command/status.cpp.i
+.PHONY : src/command/status.i
+
+# target to preprocess a source file
+src/command/status.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/status.cpp.i
+.PHONY : src/command/status.cpp.i
+
+src/command/status.s: src/command/status.cpp.s
+.PHONY : src/command/status.s
+
+# target to generate assembly for a file
+src/command/status.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/command/status.cpp.s
+.PHONY : src/command/status.cpp.s
+
+src/object.o: src/object.cpp.o
+.PHONY : src/object.o
+
+# target to build an object file
+src/object.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/object.cpp.o
+.PHONY : src/object.cpp.o
+
+src/object.i: src/object.cpp.i
+.PHONY : src/object.i
+
+# target to preprocess a source file
+src/object.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/object.cpp.i
+.PHONY : src/object.cpp.i
+
+src/object.s: src/object.cpp.s
+.PHONY : src/object.s
+
+# target to generate assembly for a file
+src/object.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/object.cpp.s
+.PHONY : src/object.cpp.s
 
 # Help Target
 help:
@@ -471,24 +855,72 @@ help:
 	@echo "... src/StagingArea.o"
 	@echo "... src/StagingArea.i"
 	@echo "... src/StagingArea.s"
+	@echo "... src/Tree.o"
+	@echo "... src/Tree.i"
+	@echo "... src/Tree.s"
 	@echo "... src/Utils.o"
 	@echo "... src/Utils.i"
 	@echo "... src/Utils.s"
+	@echo "... src/command/add-remote.o"
+	@echo "... src/command/add-remote.i"
+	@echo "... src/command/add-remote.s"
 	@echo "... src/command/add.o"
 	@echo "... src/command/add.i"
 	@echo "... src/command/add.s"
+	@echo "... src/command/branch.o"
+	@echo "... src/command/branch.i"
+	@echo "... src/command/branch.s"
+	@echo "... src/command/checkout.o"
+	@echo "... src/command/checkout.i"
+	@echo "... src/command/checkout.s"
 	@echo "... src/command/commit.o"
 	@echo "... src/command/commit.i"
 	@echo "... src/command/commit.s"
+	@echo "... src/command/fetch.o"
+	@echo "... src/command/fetch.i"
+	@echo "... src/command/fetch.s"
+	@echo "... src/command/find.o"
+	@echo "... src/command/find.i"
+	@echo "... src/command/find.s"
+	@echo "... src/command/global-log.o"
+	@echo "... src/command/global-log.i"
+	@echo "... src/command/global-log.s"
 	@echo "... src/command/init.o"
 	@echo "... src/command/init.i"
 	@echo "... src/command/init.s"
 	@echo "... src/command/log.o"
 	@echo "... src/command/log.i"
 	@echo "... src/command/log.s"
+	@echo "... src/command/merge.o"
+	@echo "... src/command/merge.i"
+	@echo "... src/command/merge.s"
+	@echo "... src/command/pull.o"
+	@echo "... src/command/pull.i"
+	@echo "... src/command/pull.s"
+	@echo "... src/command/push.o"
+	@echo "... src/command/push.i"
+	@echo "... src/command/push.s"
+	@echo "... src/command/remote.o"
+	@echo "... src/command/remote.i"
+	@echo "... src/command/remote.s"
+	@echo "... src/command/reset.o"
+	@echo "... src/command/reset.i"
+	@echo "... src/command/reset.s"
+	@echo "... src/command/rm-branch.o"
+	@echo "... src/command/rm-branch.i"
+	@echo "... src/command/rm-branch.s"
+	@echo "... src/command/rm-remote.o"
+	@echo "... src/command/rm-remote.i"
+	@echo "... src/command/rm-remote.s"
 	@echo "... src/command/rm.o"
 	@echo "... src/command/rm.i"
 	@echo "... src/command/rm.s"
+	@echo "... src/command/status.o"
+	@echo "... src/command/status.i"
+	@echo "... src/command/status.s"
+	@echo "... src/object.o"
+	@echo "... src/object.i"
+	@echo "... src/object.s"
 .PHONY : help
 
 

@@ -11,12 +11,12 @@
 #include <vector>
 #include <string>
 
-class globallogcommand :Object{
+class globallogcommand{
     public:
-    void globallog();
+    static void globalLog();
     private:
-    void printCommitInfo(const std::string& commit_sha);
-    std::string formatTimestamp(const std::string& raw_timestamp);
+    static void printCommitInfo(const std::string& commit_sha);
+    static std::string formatTimestamp(const std::string& raw_timestamp);
 };
 
 #endif //GLOBAL_LOG_H

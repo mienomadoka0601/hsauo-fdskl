@@ -13,6 +13,8 @@ public:
     std::vector<uint8_t> serialize() const override;
     std::vector<uint8_t> getContent() const { return content; }
     std::string getContentAsString() const;
+    std::string getOid() const override;
+    void save()const override;
     
 };
 template <>

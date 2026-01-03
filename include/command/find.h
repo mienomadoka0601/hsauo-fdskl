@@ -10,11 +10,11 @@
 #include <vector>
 #include <map>
 
-class findcommand : Object{
+class findcommand{
     public:
-    void find();
+    static void find(const std::string& target_msg);
     private:
-    std::vector<std::string> findMatchingCommits(const std::string& target_msg);
+    static std::vector<std::string> findMatchingCommits(const std::string& target_msg);
 };
 
 #endif //FIND_H

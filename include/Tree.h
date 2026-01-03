@@ -1,11 +1,11 @@
 #ifndef TREE_H
 #define TREE_H
-
+#include "object.h"
 #include <string>
 #include <map>
 #include <vector>
 
-class Tree {
+class Tree{
 private:
     std::map<std::string, std::string> entries_;
     std::string sha1_;
@@ -24,10 +24,8 @@ public:
     
     std::vector<uint8_t> serialize() const;
     static Tree deserialize(const std::vector<uint8_t>& data);
-    
     void save();
     static Tree load(const std::string& tree_sha);
-    
     std::string getSha1() const { return sha1_; }
     
     static std::string createTreeFromParentAndStaging(

@@ -6,7 +6,7 @@
 #include "../include/Repository.h"
 #include "../include/StagingArea.h"
 #include <string>
-class rmcommand : Object {
+class rmcommand {
     public:
         static void rm(const std::string& filename);
 };

@@ -2,7 +2,6 @@
 #include "../include/Utils.h"
 #include "../include/Repository.h"
 #include <sstream>
-#include <openssl/sha.h>
 
 Tree::Tree() {}
 
@@ -66,7 +65,7 @@ Tree Tree::deserialize(const std::vector<uint8_t>& data) {
     return Tree(entries);
 }
 
-void Tree::save() {
+void Tree::save(){
     std::string content(serialize().begin(), serialize().end());
     std::string header = "tree " + std::to_string(content.size());
     std::string full_data = header + '\0' + content;
@@ -84,7 +83,7 @@ Tree Tree::load(const std::string& tree_sha) {
                              tree_sha.substr(0, 2) + "/" + 
                              tree_sha.substr(2);
     
-    std::string content = Utils::readFile(object_path);
+    std::string content = Utils::readContentsAsString(object_path);
     
     size_t null_pos = content.find('\0');
     if (null_pos == std::string::npos) {

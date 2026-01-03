@@ -10,7 +10,7 @@
 #include <sstream>
 #include <vector>
 #include <string>
-class logcommand : Object {
+class logcommand {
     public:
     static void log();
     private:

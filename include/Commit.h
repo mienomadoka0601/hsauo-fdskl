@@ -12,12 +12,13 @@ class Commit : public Object {
     std::string message_;
     std::vector<std::string> parents_;
     std::string timestamp_;
-    std::map<std::string, std::string> file_blobs_;
-    std::string sha1_;  
+    mutable std::map<std::string, std::string> file_blobs_;
+    mutable std::string sha1_;  
     std::string generateSha1();
     std::string getCurrentTimeString(); 
     public:
-    
+    std::string getOid() const override;
+    void save()const override;
     ObjectType getType() const override { return ObjectType::COMMIT; }
     std::vector<uint8_t> serialize() const override;
     static bool isFileTrackedInCurrentCommit(const std::string& filename);
@@ -25,7 +26,6 @@ class Commit : public Object {
     Commit(const std::string& message, const std::string& parent_sha);
     void addFileBlob(const std::string& filename, const std::string& blob_sha);
     void removeFileBlob(const std::string& filename);
-    void save();
     static std::string getCurrentCommitSha();
     static std::map<std::string, std::string> loadFileBlobs(const std::string& commit_sha);
     static void updateHead(const std::string& new_commit_sha);

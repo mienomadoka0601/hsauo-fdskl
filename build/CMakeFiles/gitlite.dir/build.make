@@ -153,10 +153,38 @@ CMakeFiles/gitlite.dir/src/SomeObj.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gitlite.dir/src/SomeObj.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/33964/Desktop/jiao/gitlite/src/SomeObj.cpp -o CMakeFiles/gitlite.dir/src/SomeObj.cpp.s
 
+CMakeFiles/gitlite.dir/src/object.cpp.o: CMakeFiles/gitlite.dir/flags.make
+CMakeFiles/gitlite.dir/src/object.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/object.cpp
+CMakeFiles/gitlite.dir/src/object.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/gitlite.dir/src/object.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/object.cpp.o -MF CMakeFiles/gitlite.dir/src/object.cpp.o.d -o CMakeFiles/gitlite.dir/src/object.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/object.cpp
+
+CMakeFiles/gitlite.dir/src/object.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gitlite.dir/src/object.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/33964/Desktop/jiao/gitlite/src/object.cpp > CMakeFiles/gitlite.dir/src/object.cpp.i
+
+CMakeFiles/gitlite.dir/src/object.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gitlite.dir/src/object.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/33964/Desktop/jiao/gitlite/src/object.cpp -o CMakeFiles/gitlite.dir/src/object.cpp.s
+
+CMakeFiles/gitlite.dir/src/Tree.cpp.o: CMakeFiles/gitlite.dir/flags.make
+CMakeFiles/gitlite.dir/src/Tree.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/Tree.cpp
+CMakeFiles/gitlite.dir/src/Tree.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/gitlite.dir/src/Tree.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/Tree.cpp.o -MF CMakeFiles/gitlite.dir/src/Tree.cpp.o.d -o CMakeFiles/gitlite.dir/src/Tree.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/Tree.cpp
+
+CMakeFiles/gitlite.dir/src/Tree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gitlite.dir/src/Tree.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/33964/Desktop/jiao/gitlite/src/Tree.cpp > CMakeFiles/gitlite.dir/src/Tree.cpp.i
+
+CMakeFiles/gitlite.dir/src/Tree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gitlite.dir/src/Tree.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/33964/Desktop/jiao/gitlite/src/Tree.cpp -o CMakeFiles/gitlite.dir/src/Tree.cpp.s
+
 CMakeFiles/gitlite.dir/src/Utils.cpp.o: CMakeFiles/gitlite.dir/flags.make
 CMakeFiles/gitlite.dir/src/Utils.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/Utils.cpp
 CMakeFiles/gitlite.dir/src/Utils.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/gitlite.dir/src/Utils.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/gitlite.dir/src/Utils.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/Utils.cpp.o -MF CMakeFiles/gitlite.dir/src/Utils.cpp.o.d -o CMakeFiles/gitlite.dir/src/Utils.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/Utils.cpp
 
 CMakeFiles/gitlite.dir/src/Utils.cpp.i: cmake_force
@@ -170,7 +198,7 @@ CMakeFiles/gitlite.dir/src/Utils.cpp.s: cmake_force
 CMakeFiles/gitlite.dir/src/GitliteException.cpp.o: CMakeFiles/gitlite.dir/flags.make
 CMakeFiles/gitlite.dir/src/GitliteException.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/GitliteException.cpp
 CMakeFiles/gitlite.dir/src/GitliteException.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/gitlite.dir/src/GitliteException.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/gitlite.dir/src/GitliteException.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/GitliteException.cpp.o -MF CMakeFiles/gitlite.dir/src/GitliteException.cpp.o.d -o CMakeFiles/gitlite.dir/src/GitliteException.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/GitliteException.cpp
 
 CMakeFiles/gitlite.dir/src/GitliteException.cpp.i: cmake_force
@@ -184,7 +212,7 @@ CMakeFiles/gitlite.dir/src/GitliteException.cpp.s: cmake_force
 CMakeFiles/gitlite.dir/src/command/commit.cpp.o: CMakeFiles/gitlite.dir/flags.make
 CMakeFiles/gitlite.dir/src/command/commit.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/commit.cpp
 CMakeFiles/gitlite.dir/src/command/commit.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/gitlite.dir/src/command/commit.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/gitlite.dir/src/command/commit.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/commit.cpp.o -MF CMakeFiles/gitlite.dir/src/command/commit.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/commit.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/commit.cpp
 
 CMakeFiles/gitlite.dir/src/command/commit.cpp.i: cmake_force
@@ -198,7 +226,7 @@ CMakeFiles/gitlite.dir/src/command/commit.cpp.s: cmake_force
 CMakeFiles/gitlite.dir/src/command/rm.cpp.o: CMakeFiles/gitlite.dir/flags.make
 CMakeFiles/gitlite.dir/src/command/rm.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/rm.cpp
 CMakeFiles/gitlite.dir/src/command/rm.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/gitlite.dir/src/command/rm.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/gitlite.dir/src/command/rm.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/rm.cpp.o -MF CMakeFiles/gitlite.dir/src/command/rm.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/rm.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/rm.cpp
 
 CMakeFiles/gitlite.dir/src/command/rm.cpp.i: cmake_force
@@ -212,7 +240,7 @@ CMakeFiles/gitlite.dir/src/command/rm.cpp.s: cmake_force
 CMakeFiles/gitlite.dir/src/command/log.cpp.o: CMakeFiles/gitlite.dir/flags.make
 CMakeFiles/gitlite.dir/src/command/log.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/log.cpp
 CMakeFiles/gitlite.dir/src/command/log.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/gitlite.dir/src/command/log.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/gitlite.dir/src/command/log.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/log.cpp.o -MF CMakeFiles/gitlite.dir/src/command/log.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/log.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/log.cpp
 
 CMakeFiles/gitlite.dir/src/command/log.cpp.i: cmake_force
@@ -226,7 +254,7 @@ CMakeFiles/gitlite.dir/src/command/log.cpp.s: cmake_force
 CMakeFiles/gitlite.dir/src/command/init.cpp.o: CMakeFiles/gitlite.dir/flags.make
 CMakeFiles/gitlite.dir/src/command/init.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/init.cpp
 CMakeFiles/gitlite.dir/src/command/init.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/gitlite.dir/src/command/init.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/gitlite.dir/src/command/init.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/init.cpp.o -MF CMakeFiles/gitlite.dir/src/command/init.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/init.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/init.cpp
 
 CMakeFiles/gitlite.dir/src/command/init.cpp.i: cmake_force
@@ -240,7 +268,7 @@ CMakeFiles/gitlite.dir/src/command/init.cpp.s: cmake_force
 CMakeFiles/gitlite.dir/src/command/add.cpp.o: CMakeFiles/gitlite.dir/flags.make
 CMakeFiles/gitlite.dir/src/command/add.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/add.cpp
 CMakeFiles/gitlite.dir/src/command/add.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/gitlite.dir/src/command/add.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/gitlite.dir/src/command/add.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/add.cpp.o -MF CMakeFiles/gitlite.dir/src/command/add.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/add.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/add.cpp
 
 CMakeFiles/gitlite.dir/src/command/add.cpp.i: cmake_force
@@ -251,6 +279,202 @@ CMakeFiles/gitlite.dir/src/command/add.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gitlite.dir/src/command/add.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/add.cpp -o CMakeFiles/gitlite.dir/src/command/add.cpp.s
 
+CMakeFiles/gitlite.dir/src/command/status.cpp.o: CMakeFiles/gitlite.dir/flags.make
+CMakeFiles/gitlite.dir/src/command/status.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/status.cpp
+CMakeFiles/gitlite.dir/src/command/status.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/gitlite.dir/src/command/status.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/status.cpp.o -MF CMakeFiles/gitlite.dir/src/command/status.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/status.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/status.cpp
+
+CMakeFiles/gitlite.dir/src/command/status.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gitlite.dir/src/command/status.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/status.cpp > CMakeFiles/gitlite.dir/src/command/status.cpp.i
+
+CMakeFiles/gitlite.dir/src/command/status.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gitlite.dir/src/command/status.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/status.cpp -o CMakeFiles/gitlite.dir/src/command/status.cpp.s
+
+CMakeFiles/gitlite.dir/src/command/add-remote.cpp.o: CMakeFiles/gitlite.dir/flags.make
+CMakeFiles/gitlite.dir/src/command/add-remote.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/add-remote.cpp
+CMakeFiles/gitlite.dir/src/command/add-remote.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/gitlite.dir/src/command/add-remote.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/add-remote.cpp.o -MF CMakeFiles/gitlite.dir/src/command/add-remote.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/add-remote.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/add-remote.cpp
+
+CMakeFiles/gitlite.dir/src/command/add-remote.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gitlite.dir/src/command/add-remote.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/add-remote.cpp > CMakeFiles/gitlite.dir/src/command/add-remote.cpp.i
+
+CMakeFiles/gitlite.dir/src/command/add-remote.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gitlite.dir/src/command/add-remote.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/add-remote.cpp -o CMakeFiles/gitlite.dir/src/command/add-remote.cpp.s
+
+CMakeFiles/gitlite.dir/src/command/rm-remote.cpp.o: CMakeFiles/gitlite.dir/flags.make
+CMakeFiles/gitlite.dir/src/command/rm-remote.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/rm-remote.cpp
+CMakeFiles/gitlite.dir/src/command/rm-remote.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/gitlite.dir/src/command/rm-remote.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/rm-remote.cpp.o -MF CMakeFiles/gitlite.dir/src/command/rm-remote.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/rm-remote.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/rm-remote.cpp
+
+CMakeFiles/gitlite.dir/src/command/rm-remote.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gitlite.dir/src/command/rm-remote.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/rm-remote.cpp > CMakeFiles/gitlite.dir/src/command/rm-remote.cpp.i
+
+CMakeFiles/gitlite.dir/src/command/rm-remote.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gitlite.dir/src/command/rm-remote.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/rm-remote.cpp -o CMakeFiles/gitlite.dir/src/command/rm-remote.cpp.s
+
+CMakeFiles/gitlite.dir/src/command/branch.cpp.o: CMakeFiles/gitlite.dir/flags.make
+CMakeFiles/gitlite.dir/src/command/branch.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/branch.cpp
+CMakeFiles/gitlite.dir/src/command/branch.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/gitlite.dir/src/command/branch.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/branch.cpp.o -MF CMakeFiles/gitlite.dir/src/command/branch.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/branch.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/branch.cpp
+
+CMakeFiles/gitlite.dir/src/command/branch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gitlite.dir/src/command/branch.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/branch.cpp > CMakeFiles/gitlite.dir/src/command/branch.cpp.i
+
+CMakeFiles/gitlite.dir/src/command/branch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gitlite.dir/src/command/branch.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/branch.cpp -o CMakeFiles/gitlite.dir/src/command/branch.cpp.s
+
+CMakeFiles/gitlite.dir/src/command/checkout.cpp.o: CMakeFiles/gitlite.dir/flags.make
+CMakeFiles/gitlite.dir/src/command/checkout.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/checkout.cpp
+CMakeFiles/gitlite.dir/src/command/checkout.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/gitlite.dir/src/command/checkout.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/checkout.cpp.o -MF CMakeFiles/gitlite.dir/src/command/checkout.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/checkout.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/checkout.cpp
+
+CMakeFiles/gitlite.dir/src/command/checkout.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gitlite.dir/src/command/checkout.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/checkout.cpp > CMakeFiles/gitlite.dir/src/command/checkout.cpp.i
+
+CMakeFiles/gitlite.dir/src/command/checkout.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gitlite.dir/src/command/checkout.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/checkout.cpp -o CMakeFiles/gitlite.dir/src/command/checkout.cpp.s
+
+CMakeFiles/gitlite.dir/src/command/fetch.cpp.o: CMakeFiles/gitlite.dir/flags.make
+CMakeFiles/gitlite.dir/src/command/fetch.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/fetch.cpp
+CMakeFiles/gitlite.dir/src/command/fetch.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/gitlite.dir/src/command/fetch.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/fetch.cpp.o -MF CMakeFiles/gitlite.dir/src/command/fetch.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/fetch.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/fetch.cpp
+
+CMakeFiles/gitlite.dir/src/command/fetch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gitlite.dir/src/command/fetch.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/fetch.cpp > CMakeFiles/gitlite.dir/src/command/fetch.cpp.i
+
+CMakeFiles/gitlite.dir/src/command/fetch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gitlite.dir/src/command/fetch.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/fetch.cpp -o CMakeFiles/gitlite.dir/src/command/fetch.cpp.s
+
+CMakeFiles/gitlite.dir/src/command/global-log.cpp.o: CMakeFiles/gitlite.dir/flags.make
+CMakeFiles/gitlite.dir/src/command/global-log.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/global-log.cpp
+CMakeFiles/gitlite.dir/src/command/global-log.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/gitlite.dir/src/command/global-log.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/global-log.cpp.o -MF CMakeFiles/gitlite.dir/src/command/global-log.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/global-log.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/global-log.cpp
+
+CMakeFiles/gitlite.dir/src/command/global-log.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gitlite.dir/src/command/global-log.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/global-log.cpp > CMakeFiles/gitlite.dir/src/command/global-log.cpp.i
+
+CMakeFiles/gitlite.dir/src/command/global-log.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gitlite.dir/src/command/global-log.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/global-log.cpp -o CMakeFiles/gitlite.dir/src/command/global-log.cpp.s
+
+CMakeFiles/gitlite.dir/src/command/merge.cpp.o: CMakeFiles/gitlite.dir/flags.make
+CMakeFiles/gitlite.dir/src/command/merge.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/merge.cpp
+CMakeFiles/gitlite.dir/src/command/merge.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/gitlite.dir/src/command/merge.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/merge.cpp.o -MF CMakeFiles/gitlite.dir/src/command/merge.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/merge.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/merge.cpp
+
+CMakeFiles/gitlite.dir/src/command/merge.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gitlite.dir/src/command/merge.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/merge.cpp > CMakeFiles/gitlite.dir/src/command/merge.cpp.i
+
+CMakeFiles/gitlite.dir/src/command/merge.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gitlite.dir/src/command/merge.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/merge.cpp -o CMakeFiles/gitlite.dir/src/command/merge.cpp.s
+
+CMakeFiles/gitlite.dir/src/command/pull.cpp.o: CMakeFiles/gitlite.dir/flags.make
+CMakeFiles/gitlite.dir/src/command/pull.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/pull.cpp
+CMakeFiles/gitlite.dir/src/command/pull.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/gitlite.dir/src/command/pull.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/pull.cpp.o -MF CMakeFiles/gitlite.dir/src/command/pull.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/pull.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/pull.cpp
+
+CMakeFiles/gitlite.dir/src/command/pull.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gitlite.dir/src/command/pull.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/pull.cpp > CMakeFiles/gitlite.dir/src/command/pull.cpp.i
+
+CMakeFiles/gitlite.dir/src/command/pull.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gitlite.dir/src/command/pull.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/pull.cpp -o CMakeFiles/gitlite.dir/src/command/pull.cpp.s
+
+CMakeFiles/gitlite.dir/src/command/push.cpp.o: CMakeFiles/gitlite.dir/flags.make
+CMakeFiles/gitlite.dir/src/command/push.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/push.cpp
+CMakeFiles/gitlite.dir/src/command/push.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/gitlite.dir/src/command/push.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/push.cpp.o -MF CMakeFiles/gitlite.dir/src/command/push.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/push.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/push.cpp
+
+CMakeFiles/gitlite.dir/src/command/push.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gitlite.dir/src/command/push.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/push.cpp > CMakeFiles/gitlite.dir/src/command/push.cpp.i
+
+CMakeFiles/gitlite.dir/src/command/push.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gitlite.dir/src/command/push.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/push.cpp -o CMakeFiles/gitlite.dir/src/command/push.cpp.s
+
+CMakeFiles/gitlite.dir/src/command/remote.cpp.o: CMakeFiles/gitlite.dir/flags.make
+CMakeFiles/gitlite.dir/src/command/remote.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/remote.cpp
+CMakeFiles/gitlite.dir/src/command/remote.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/gitlite.dir/src/command/remote.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/remote.cpp.o -MF CMakeFiles/gitlite.dir/src/command/remote.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/remote.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/remote.cpp
+
+CMakeFiles/gitlite.dir/src/command/remote.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gitlite.dir/src/command/remote.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/remote.cpp > CMakeFiles/gitlite.dir/src/command/remote.cpp.i
+
+CMakeFiles/gitlite.dir/src/command/remote.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gitlite.dir/src/command/remote.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/remote.cpp -o CMakeFiles/gitlite.dir/src/command/remote.cpp.s
+
+CMakeFiles/gitlite.dir/src/command/reset.cpp.o: CMakeFiles/gitlite.dir/flags.make
+CMakeFiles/gitlite.dir/src/command/reset.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/reset.cpp
+CMakeFiles/gitlite.dir/src/command/reset.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/gitlite.dir/src/command/reset.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/reset.cpp.o -MF CMakeFiles/gitlite.dir/src/command/reset.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/reset.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/reset.cpp
+
+CMakeFiles/gitlite.dir/src/command/reset.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gitlite.dir/src/command/reset.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/reset.cpp > CMakeFiles/gitlite.dir/src/command/reset.cpp.i
+
+CMakeFiles/gitlite.dir/src/command/reset.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gitlite.dir/src/command/reset.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/reset.cpp -o CMakeFiles/gitlite.dir/src/command/reset.cpp.s
+
+CMakeFiles/gitlite.dir/src/command/rm-branch.cpp.o: CMakeFiles/gitlite.dir/flags.make
+CMakeFiles/gitlite.dir/src/command/rm-branch.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/rm-branch.cpp
+CMakeFiles/gitlite.dir/src/command/rm-branch.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/gitlite.dir/src/command/rm-branch.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/rm-branch.cpp.o -MF CMakeFiles/gitlite.dir/src/command/rm-branch.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/rm-branch.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/rm-branch.cpp
+
+CMakeFiles/gitlite.dir/src/command/rm-branch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gitlite.dir/src/command/rm-branch.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/rm-branch.cpp > CMakeFiles/gitlite.dir/src/command/rm-branch.cpp.i
+
+CMakeFiles/gitlite.dir/src/command/rm-branch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gitlite.dir/src/command/rm-branch.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/rm-branch.cpp -o CMakeFiles/gitlite.dir/src/command/rm-branch.cpp.s
+
+CMakeFiles/gitlite.dir/src/command/find.cpp.o: CMakeFiles/gitlite.dir/flags.make
+CMakeFiles/gitlite.dir/src/command/find.cpp.o: /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/find.cpp
+CMakeFiles/gitlite.dir/src/command/find.cpp.o: CMakeFiles/gitlite.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/gitlite.dir/src/command/find.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/gitlite.dir/src/command/find.cpp.o -MF CMakeFiles/gitlite.dir/src/command/find.cpp.o.d -o CMakeFiles/gitlite.dir/src/command/find.cpp.o -c /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/find.cpp
+
+CMakeFiles/gitlite.dir/src/command/find.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/gitlite.dir/src/command/find.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/find.cpp > CMakeFiles/gitlite.dir/src/command/find.cpp.i
+
+CMakeFiles/gitlite.dir/src/command/find.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/gitlite.dir/src/command/find.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/33964/Desktop/jiao/gitlite/src/command/find.cpp -o CMakeFiles/gitlite.dir/src/command/find.cpp.s
+
 # Object files for target gitlite
 gitlite_OBJECTS = \
 "CMakeFiles/gitlite.dir/main.cpp.o" \
@@ -259,13 +483,29 @@ gitlite_OBJECTS = \
 "CMakeFiles/gitlite.dir/src/StagingArea.cpp.o" \
 "CMakeFiles/gitlite.dir/src/Commit.cpp.o" \
 "CMakeFiles/gitlite.dir/src/SomeObj.cpp.o" \
+"CMakeFiles/gitlite.dir/src/object.cpp.o" \
+"CMakeFiles/gitlite.dir/src/Tree.cpp.o" \
 "CMakeFiles/gitlite.dir/src/Utils.cpp.o" \
 "CMakeFiles/gitlite.dir/src/GitliteException.cpp.o" \
 "CMakeFiles/gitlite.dir/src/command/commit.cpp.o" \
 "CMakeFiles/gitlite.dir/src/command/rm.cpp.o" \
 "CMakeFiles/gitlite.dir/src/command/log.cpp.o" \
 "CMakeFiles/gitlite.dir/src/command/init.cpp.o" \
-"CMakeFiles/gitlite.dir/src/command/add.cpp.o"
+"CMakeFiles/gitlite.dir/src/command/add.cpp.o" \
+"CMakeFiles/gitlite.dir/src/command/status.cpp.o" \
+"CMakeFiles/gitlite.dir/src/command/add-remote.cpp.o" \
+"CMakeFiles/gitlite.dir/src/command/rm-remote.cpp.o" \
+"CMakeFiles/gitlite.dir/src/command/branch.cpp.o" \
+"CMakeFiles/gitlite.dir/src/command/checkout.cpp.o" \
+"CMakeFiles/gitlite.dir/src/command/fetch.cpp.o" \
+"CMakeFiles/gitlite.dir/src/command/global-log.cpp.o" \
+"CMakeFiles/gitlite.dir/src/command/merge.cpp.o" \
+"CMakeFiles/gitlite.dir/src/command/pull.cpp.o" \
+"CMakeFiles/gitlite.dir/src/command/push.cpp.o" \
+"CMakeFiles/gitlite.dir/src/command/remote.cpp.o" \
+"CMakeFiles/gitlite.dir/src/command/reset.cpp.o" \
+"CMakeFiles/gitlite.dir/src/command/rm-branch.cpp.o" \
+"CMakeFiles/gitlite.dir/src/command/find.cpp.o"
 
 # External object files for target gitlite
 gitlite_EXTERNAL_OBJECTS =
@@ -276,6 +516,8 @@ bin/gitlite: CMakeFiles/gitlite.dir/src/Repository.cpp.o
 bin/gitlite: CMakeFiles/gitlite.dir/src/StagingArea.cpp.o
 bin/gitlite: CMakeFiles/gitlite.dir/src/Commit.cpp.o
 bin/gitlite: CMakeFiles/gitlite.dir/src/SomeObj.cpp.o
+bin/gitlite: CMakeFiles/gitlite.dir/src/object.cpp.o
+bin/gitlite: CMakeFiles/gitlite.dir/src/Tree.cpp.o
 bin/gitlite: CMakeFiles/gitlite.dir/src/Utils.cpp.o
 bin/gitlite: CMakeFiles/gitlite.dir/src/GitliteException.cpp.o
 bin/gitlite: CMakeFiles/gitlite.dir/src/command/commit.cpp.o
@@ -283,9 +525,23 @@ bin/gitlite: CMakeFiles/gitlite.dir/src/command/rm.cpp.o
 bin/gitlite: CMakeFiles/gitlite.dir/src/command/log.cpp.o
 bin/gitlite: CMakeFiles/gitlite.dir/src/command/init.cpp.o
 bin/gitlite: CMakeFiles/gitlite.dir/src/command/add.cpp.o
+bin/gitlite: CMakeFiles/gitlite.dir/src/command/status.cpp.o
+bin/gitlite: CMakeFiles/gitlite.dir/src/command/add-remote.cpp.o
+bin/gitlite: CMakeFiles/gitlite.dir/src/command/rm-remote.cpp.o
+bin/gitlite: CMakeFiles/gitlite.dir/src/command/branch.cpp.o
+bin/gitlite: CMakeFiles/gitlite.dir/src/command/checkout.cpp.o
+bin/gitlite: CMakeFiles/gitlite.dir/src/command/fetch.cpp.o
+bin/gitlite: CMakeFiles/gitlite.dir/src/command/global-log.cpp.o
+bin/gitlite: CMakeFiles/gitlite.dir/src/command/merge.cpp.o
+bin/gitlite: CMakeFiles/gitlite.dir/src/command/pull.cpp.o
+bin/gitlite: CMakeFiles/gitlite.dir/src/command/push.cpp.o
+bin/gitlite: CMakeFiles/gitlite.dir/src/command/remote.cpp.o
+bin/gitlite: CMakeFiles/gitlite.dir/src/command/reset.cpp.o
+bin/gitlite: CMakeFiles/gitlite.dir/src/command/rm-branch.cpp.o
+bin/gitlite: CMakeFiles/gitlite.dir/src/command/find.cpp.o
 bin/gitlite: CMakeFiles/gitlite.dir/build.make
 bin/gitlite: CMakeFiles/gitlite.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable bin/gitlite"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/mnt/c/Users/33964/Desktop/jiao/gitlite/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Linking CXX executable bin/gitlite"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gitlite.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

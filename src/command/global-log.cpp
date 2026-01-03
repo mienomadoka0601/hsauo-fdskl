@@ -10,19 +10,57 @@
 #include <vector>
 #include <string>
 
-void global_logcommand::global_log() {
-    std::string commits_dir = Repository::getCommitsDir();）
-    std::vector<std::string> commit_shas = Utils::plainFilenamesIn(commits_dir);
-    if (commit_shas.empty()) {
+void globallogcommand::globalLog() {
+    std::string objects_dir = Repository::getObjectsDir();
+    
+    if (!Utils::exists(objects_dir)) {
         std::cout << "No commits yet." << std::endl;
         return;
     }
-    for (const std::string& sha : commit_shas) {
+    
+    std::vector<std::string> all_commits;
+    
+    // 遍历 objects 目录的所有子目录
+    for (const auto& dir_entry : std::filesystem::directory_iterator(objects_dir)) {
+        if (dir_entry.is_directory()) {
+            std::string subdir = dir_entry.path().string();
+            
+            // 获取子目录中的文件
+            std::vector<std::string> files = Utils::plainFilenamesIn(subdir);
+            
+            for (const auto& file : files) {
+                // 组合完整的 SHA：前2位（目录名）+ 后38位（文件名）
+                std::string dir_name = dir_entry.path().filename().string();
+                std::string sha = dir_name + file;
+                
+                // 检查是否是 commit 对象
+                std::string object_path = Utils::join(objects_dir, dir_name, file);
+                
+                try {
+                    std::string content = Utils::readContentsAsString(object_path);
+                    // commit 对象以 "commit " 开头
+                    if (content.find("commit ") == 0) {
+                        all_commits.push_back(sha);
+                    }
+                } catch (...) {
+                    // 跳过无法读取的文件
+                    continue;
+                }
+            }
+        }
+    }
+    
+    if (all_commits.empty()) {
+        std::cout << "No commits yet." << std::endl;
+        return;
+    }
+    
+    for (const std::string& sha : all_commits) {
         printCommitInfo(sha);
     }
 }
 
-void global_logcommand::printCommitInfo(const std::string& commit_sha) {
+void globallogcommand::printCommitInfo(const std::string& commit_sha) {
     std::string message = Commit::getCommitMessage(commit_sha);
     std::string raw_timestamp = Commit::getCommitTimestamp(commit_sha);
     std::vector<std::string> parents = Commit::getCommitParents(commit_sha);
@@ -37,7 +75,7 @@ void global_logcommand::printCommitInfo(const std::string& commit_sha) {
     std::cout << "Date: " << formatted_time << std::endl;
     std::cout << message << std::endl << std::endl;
 }
-std::string global_logcommand::formatTimestamp(const std::string& raw_timestamp) {
+std::string globallogcommand::formatTimestamp(const std::string& raw_timestamp) {
     std::tm tm = {};
     std::istringstream iss(raw_timestamp);
     iss >> std::get_time(&tm, "%Y-%m-%d %H:%M:%S");

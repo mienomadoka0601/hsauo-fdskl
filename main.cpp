@@ -36,7 +36,7 @@ int main(int argc, char* argv[]) {
     if (firstArg == "init") {
         checkArgsNum(args, 1);
         bloop.init();
-    } else if (firstArg == "add-remote") {
+    } /*else if (firstArg == "add-remote") {
         checkCWD();
         checkArgsNum(args, 3);
         bloop.addRemote(args[1], args[2]);
@@ -44,7 +44,7 @@ int main(int argc, char* argv[]) {
         checkCWD();
         checkArgsNum(args, 2);
         bloop.rmRemote(args[1]);
-    } else if (firstArg == "add") {
+    }*/ else if (firstArg == "add") {
         checkCWD();
         checkArgsNum(args, 2);
         bloop.add(args[1]);
@@ -68,7 +68,7 @@ int main(int argc, char* argv[]) {
         checkCWD();
         checkArgsNum(args, 2);
         bloop.find(args[1]);
-    } /*else if (firstArg == "status") {
+    } else if (firstArg == "status") {
         checkCWD();
         checkArgsNum(args, 1);
         bloop.status();
@@ -89,7 +89,7 @@ int main(int argc, char* argv[]) {
         } else {
             Utils::exitWithMessage("Incorrect operands.");
         }
-    } else if (firstArg == "branch") {
+    } /*else if (firstArg == "branch") {
         checkCWD();
         checkArgsNum(args, 2);
         bloop.branch(args[1]);
