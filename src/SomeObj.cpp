@@ -24,6 +24,7 @@ void SomeObj::find(const std::string& pattern) {
 }
 
 void SomeObj::addRemote(const std::string& name, const std::string& url) {
+    remotecommand::addRemote(name,url);
 }
 
 void SomeObj::init() {

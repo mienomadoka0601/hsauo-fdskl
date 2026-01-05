@@ -14367,3 +14367,205 @@ Actual: === Branches ===
 
 === Untracked Files ===
 
+samples/2-global-log-01.in: 
+global-log: 
+Expected: ['(?:(?:.|\\n)*(?:\\n|\\Z)|\\A|\\Z)===\ncommit 6738276dff8a236ed4cd8d4abd376225ba0f9e77\nDate: Thu Jan 01 08:00:00 1970 [-+]0800\ninitial commit\n\n(?:(?:.|\\n)*(?:\\n|\\Z)|\\A|\\Z)']
+Actual: ===
+commit 0efc002128265cca2df07f8adb1c3dc6fe82c9bd
+Date: Mon Jan 05 07:08:06 2026 +0000
+Two files
+
+===
+commit df2bb42b470660606b3df97db69fefd305821f1f
+Date: Mon Jan 05 07:08:07 2026 +0000
+Add h
+
+
+samples/3-status-05.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', '']
+Actual: === Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+f.txt
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+samples/5-merge-03.in: 
+merge other: 
+Expected: ['Encountered a merge conflict.']
+Actual: 
+samples/5-merge-07.in: 
+commit "Reset f to notwug.txt": 
+Expected: []
+Actual: No changes added to the commit.
+
+samples/6-remote-01.in: 
+fetch R1 master: 
+Expected: []
+Actual: terminate called after throwing an instance of 'std::filesystem::__cxx11::filesystem_error'
+  what():  filesystem error: cannot make absolute path: Invalid argument []
+Aborted (core dumped)
+
+samples/6-remote-02.in: 
+fetch R1 master: 
+Expected: []
+Actual: terminate called after throwing an instance of 'std::filesystem::__cxx11::filesystem_error'
+  what():  filesystem error: cannot make absolute path: Invalid argument []
+Aborted (core dumped)
+
+samples/6-remote-03.in: 
+add-remote R1 ../D1/.gitlite: 
+Expected: ['A remote with that name already exists.']
+Actual: 
+samples/6-status-05.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', 'f.txt', '']
+Actual: === Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+samples/2-global-log-01.in: 
+global-log: 
+Expected: ['(?:(?:.|\\n)*(?:\\n|\\Z)|\\A|\\Z)===\ncommit 6738276dff8a236ed4cd8d4abd376225ba0f9e77\nDate: Thu Jan 01 08:00:00 1970 [-+]0800\ninitial commit\n\n(?:(?:.|\\n)*(?:\\n|\\Z)|\\A|\\Z)']
+Actual: ===
+commit 82e516528810aed2a059c4f57d2d24d7fa818a99
+Date: Mon Jan 05 07:13:08 2026 +0000
+Add h
+
+===
+commit 91bd84ee1cf5960de671c57e5523cb00df6ad3db
+Date: Mon Jan 05 07:13:08 2026 +0000
+Two files
+
+
+samples/3-status-05.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', '']
+Actual: === Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+f.txt
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+samples/5-merge-03.in: 
+merge other: 
+Expected: ['Encountered a merge conflict.']
+Actual: 
+samples/5-merge-07.in: 
+commit "Reset f to notwug.txt": 
+Expected: []
+Actual: No changes added to the commit.
+
+samples/6-remote-01.in: 
+fetch R1 master: 
+Expected: []
+Actual: terminate called after throwing an instance of 'std::filesystem::__cxx11::filesystem_error'
+  what():  filesystem error: cannot make absolute path: Invalid argument []
+Aborted (core dumped)
+
+samples/6-remote-02.in: 
+fetch R1 master: 
+Expected: []
+Actual: terminate called after throwing an instance of 'std::filesystem::__cxx11::filesystem_error'
+  what():  filesystem error: cannot make absolute path: Invalid argument []
+Aborted (core dumped)
+
+samples/6-remote-03.in: 
+add-remote R1 ../D1/.gitlite: 
+Expected: ['A remote with that name already exists.']
+Actual: 
+samples/6-status-05.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', 'f.txt', '']
+Actual: === Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+samples/2-global-log-01.in: 
+global-log: 
+Expected: ['(?:(?:.|\\n)*(?:\\n|\\Z)|\\A|\\Z)===\ncommit 6738276dff8a236ed4cd8d4abd376225ba0f9e77\nDate: Thu Jan 01 08:00:00 1970 [-+]0800\ninitial commit\n\n(?:(?:.|\\n)*(?:\\n|\\Z)|\\A|\\Z)']
+Actual: ===
+commit 6eaa479cdac7946ef1058f64438e64a15bbee0f0
+Date: Mon Jan 05 07:34:20 2026 +0000
+Two files
+
+===
+commit f6a4eba4a8ee729d4434a7100cdbf95dc27e778b
+Date: Mon Jan 05 07:34:21 2026 +0000
+Add h
+
+
+samples/3-status-05.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', '']
+Actual: === Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+f.txt
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+samples/5-merge-03.in: 
+merge other: 
+Expected: ['Encountered a merge conflict.']
+Actual: 
+samples/5-merge-07.in: 
+commit "Reset f to notwug.txt": 
+Expected: []
+Actual: No changes added to the commit.
+
+samples/6-remote-01.in: 
+checkout R1/master: 
+Expected: []
+Actual: No such branch exists.
+
+samples/6-remote-02.in: 
+reset 627b6f24348ca0199282fe2968c673e778479136: 
+Expected: []
+Actual: File blob not found.
+
+samples/6-status-05.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', 'f.txt', '']
+Actual: === Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+

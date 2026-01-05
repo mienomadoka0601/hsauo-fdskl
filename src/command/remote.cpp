@@ -5,53 +5,53 @@
 #include <fstream>
 #include <sstream>
 #include <map>
-
 std::string remotecommand::getRemoteConfigPath() {
     std::string gitlite_dir = Repository::getGitliteDir();
-    return Utils::join(gitlite_dir, "remotes.txt");
+    std::string path = Utils::join(gitlite_dir, "remotes.txt");
+    return path;
 }
 
 void remotecommand::addRemote(const std::string& remote_name, const std::string& remote_path) {
-    std::cout << "=== DEBUG add-remote ===" << std::endl;
-    std::cout << "remote_name: " << remote_name << std::endl;
-    std::cout << "remote_path: " << remote_path << std::endl;
     
     // 1. 检查远程是否已存在
     if (exists(remote_name)) {
-        std::cout << "DEBUG: Remote already exists" << std::endl;
         std::cout << "A remote with that name already exists." << std::endl;
         exit(1);
     }
     
-    std::cout << "DEBUG: Remote does not exist, proceeding..." << std::endl;
-    
     // 2. 读取现有的远程配置
     std::map<std::string, std::string> remotes = getAllRemotes();
-    std::cout << "DEBUG: Current remotes count: " << remotes.size() << std::endl;
     
     // 3. 添加新的远程
     remotes[remote_name] = remote_path;
     
     // 4. 写回配置文件
     std::string config_path = getRemoteConfigPath();
-    std::cout << "DEBUG: Writing to config: " << config_path << std::endl;
+    
+    // 确保.gitlite目录存在
+    std::string gitlite_dir = Repository::getGitliteDir();
+    Utils::createDirectories(gitlite_dir);
     
     std::ofstream config_file(config_path);
     
+    // 检查文件是否成功打开
     if (!config_file.is_open()) {
-        std::cout << "DEBUG: Failed to open config file" << std::endl;
-        std::cout << "Failed to write remote configuration." << std::endl;
+        perror("Error details");  // 打印系统错误
         exit(1);
     }
     
-    std::cout << "DEBUG: Writing remotes to file:" << std::endl;
+    // 写入内容
     for (const auto& [name, path] : remotes) {
-        std::cout << "  " << name << "=" << path << std::endl;
         config_file << name << "=" << path << std::endl;
     }
     
     config_file.close();
-    std::cout << "DEBUG: add-remote completed successfully" << std::endl;
+    
+    // 验证文件内容
+    if (Utils::exists(config_path)) {
+        std::string content = Utils::readContentsAsString(config_path);
+    }
+    
 }
 
 bool remotecommand::exists(const std::string& remote_name) {
@@ -104,24 +104,14 @@ std::map<std::string, std::string> remotecommand::getAllRemotes() {
 }
 
 std::string remotecommand::getRemotePath(const std::string& remote_name) {
-    std::cout << "=== DEBUG getRemotePath ===" << std::endl;
-    std::cout << "Looking for remote: " << remote_name << std::endl;
     
     std::map<std::string, std::string> remotes = getAllRemotes();
-    std::cout << "DEBUG: Found " << remotes.size() << " remotes" << std::endl;
-    
-    for (const auto& [name, path] : remotes) {
-        std::cout << "  " << name << " -> " << path << std::endl;
-    }
     
     auto it = remotes.find(remote_name);
     
     if (it != remotes.end()) {
-        std::cout << "DEBUG: Found path: " << it->second << std::endl;
         return it->second;
     }
-    
-    std::cout << "DEBUG: Remote not found" << std::endl;
     return "";
 }
 
