@@ -2,34 +2,37 @@
 #include "Utils.h"
 #include "Repository.h"
 #include <sstream>
-Blob::Blob(const std::vector<uint8_t>& content) : content(content) {}
-Blob::Blob(const std::string& content) : content(content.begin(), content.end()) {}
+Blob::Blob(const std::vector<uint8_t> &content) : content(content) {}
+Blob::Blob(const std::string &content) : content(content.begin(), content.end()) {}
 
-std::vector<uint8_t> Blob::serialize() const {
+std::vector<uint8_t> Blob::serialize() const
+{
     std::string content_str = getContentAsString();
     std::string header = "blob " + std::to_string(content_str.size());
     std::string full_data = header + '\0' + content_str;
     return std::vector<uint8_t>(full_data.begin(), full_data.end());
 }
-std::string Blob::getContentAsString() const {
-    return std::string(reinterpret_cast<const char*>(content.data()), content.size());
+std::string Blob::getContentAsString() const
+{
+    return std::string(reinterpret_cast<const char *>(content.data()), content.size());
 }
-std::string Blob::getOid() const {
-    
+std::string Blob::getOid() const
+{
+
     auto data = serialize();
-    
+
     std::string oid = Utils::sha1(data);
-    
+
     return oid;
 }
 
-void Blob::save() const {
-    auto data= serialize();
+void Blob::save() const
+{
+    auto data = serialize();
     std::string full_data(data.begin(), data.end());
-    
+
     std::string oid = Utils::sha1(full_data);
-    
-    // 也计算 serialize() 的 SHA1 进行对比
+
     auto serialized = serialize();
     std::string serialized_oid = Utils::sha1(serialized);
     std::string object_dir = Repository::getObjectsDir() + "/" + oid.substr(0, 2);

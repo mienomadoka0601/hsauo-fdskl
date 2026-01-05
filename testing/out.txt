@@ -14569,3 +14569,308 @@ Actual: === Branches ===
 
 === Untracked Files ===
 
+samples/2-global-log-01.in: 
+global-log: 
+Expected: ['(?:(?:.|\\n)*(?:\\n|\\Z)|\\A|\\Z)===\ncommit 6738276dff8a236ed4cd8d4abd376225ba0f9e77\nDate: Thu Jan 01 08:00:00 1970 [-+]0800\ninitial commit\n\n(?:(?:.|\\n)*(?:\\n|\\Z)|\\A|\\Z)']
+Actual: ===
+commit 9eff779edab15b2ba325497417238b4be67726f6
+Date: Mon Jan 05 09:35:41 2026 +0000
+Add h
+
+===
+commit d3043497578bc519cd4cfcbf188c1dea3f1be860
+Date: Mon Jan 05 09:35:40 2026 +0000
+Two files
+
+
+samples/3-status-05.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', '']
+Actual: === Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+f.txt
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+samples/5-merge-03.in: 
+merge other: 
+Expected: ['Encountered a merge conflict.']
+Actual: 
+samples/5-merge-07.in: 
+commit "Reset f to notwug.txt": 
+Expected: []
+Actual: No changes added to the commit.
+
+samples/6-remote-01.in: 
+checkout R1/master: 
+Expected: []
+Actual: No such branch exists.
+
+samples/6-remote-02.in: 
+reset e44bdce10fdbae00bcbe1dedbc2b0630081ff97a: 
+Expected: []
+Actual: File blob not found.
+
+samples/6-status-05.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', 'f.txt', '']
+Actual: === Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+samples/2-global-log-01.in: 
+global-log: 
+Expected: ['(?:(?:.|\\n)*(?:\\n|\\Z)|\\A|\\Z)===\ncommit 6738276dff8a236ed4cd8d4abd376225ba0f9e77\nDate: Thu Jan 01 08:00:00 1970 [-+]0800\ninitial commit\n\n(?:(?:.|\\n)*(?:\\n|\\Z)|\\A|\\Z)']
+Actual: ===
+commit 4d1d8a4395b5dd98d50fa761836ab94b2a8cfe68
+Date: Mon Jan 05 09:53:44 2026 +0000
+Two files
+
+===
+commit f883938854395fe4b41d441c9b38ebaaa7f93a1d
+Date: Mon Jan 05 09:53:44 2026 +0000
+Add h
+
+
+samples/3-status-05.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', '']
+Actual: === Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+f.txt
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+samples/5-merge-03.in: 
+merge other: 
+Expected: ['Encountered a merge conflict.']
+Actual: 
+samples/5-merge-07.in: 
+commit "Reset f to notwug.txt": 
+Expected: []
+Actual: No changes added to the commit.
+
+samples/6-remote-01.in: 
+checkout R1/master: 
+Expected: []
+Actual: No need to checkout the current branch.
+
+samples/6-remote-02.in: 
+reset 0d4f8d69f207308af359b3d93157c0fcdf749258: 
+Expected: []
+Actual: File blob not found.
+
+samples/6-status-05.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', 'f.txt', '']
+Actual: === Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+samples/2-global-log-01.in: 
+global-log: 
+Expected: ['(?:(?:.|\\n)*(?:\\n|\\Z)|\\A|\\Z)===\ncommit 6738276dff8a236ed4cd8d4abd376225ba0f9e77\nDate: Thu Jan 01 08:00:00 1970 [-+]0800\ninitial commit\n\n(?:(?:.|\\n)*(?:\\n|\\Z)|\\A|\\Z)']
+Actual: ===
+commit ba2ac983660957e852a8d5e4a6d0f4acaa02c2cb
+Date: Mon Jan 05 10:00:37 2026 +0000
+Two files
+
+===
+commit e9bf0477ee5ec270d2ca8baba589b24bfbe4874f
+Date: Mon Jan 05 10:00:37 2026 +0000
+Add h
+
+
+samples/3-status-05.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', '']
+Actual: === Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+f.txt
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+samples/5-merge-03.in: 
+merge other: 
+Expected: ['Encountered a merge conflict.']
+Actual: 
+samples/5-merge-07.in: 
+commit "Reset f to notwug.txt": 
+Expected: []
+Actual: No changes added to the commit.
+
+samples/6-remote-01.in: 
+checkout R1/master: 
+Expected: []
+Actual: Failed to read blob: c9ccc7e7ed481c371896d87294f932e9be93d8e1
+
+samples/6-remote-02.in: 
+reset adb4592b59dadc84aa7edcb861affac292135af0: 
+Expected: []
+Actual: File blob not found.
+
+samples/6-status-05.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', 'f.txt', '']
+Actual: === Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+samples/2-global-log-01.in: 
+global-log: 
+Expected: ['(?:(?:.|\\n)*(?:\\n|\\Z)|\\A|\\Z)===\ncommit 6738276dff8a236ed4cd8d4abd376225ba0f9e77\nDate: Thu Jan 01 08:00:00 1970 [-+]0800\ninitial commit\n\n(?:(?:.|\\n)*(?:\\n|\\Z)|\\A|\\Z)']
+Actual: ===
+commit 55cfc719db9ad4457791332109008586021f2eeb
+Date: Mon Jan 05 10:18:52 2026 +0000
+Two files
+
+===
+commit a2f5303066bbf3a38aa8e3fe67eca661c7fb98d4
+Date: Mon Jan 05 10:18:52 2026 +0000
+Add h
+
+
+samples/3-status-05.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', '']
+Actual: === Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+f.txt
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+samples/5-merge-03.in: 
+merge other: 
+Expected: ['Encountered a merge conflict.']
+Actual: 
+samples/5-merge-07.in: 
+commit "Reset f to notwug.txt": 
+Expected: []
+Actual: No changes added to the commit.
+
+samples/6-remote-01.in: 
+checkout master: 
+Expected: []
+Actual: No need to checkout the current branch.
+
+samples/6-remote-02.in: 
+pull R1 master: 
+Expected: []
+Actual: A branch with that name does not exist.
+
+samples/6-status-05.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', 'f.txt', '']
+Actual: === Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+samples/2-global-log-01.in: 
+global-log: 
+Expected: ['(?:(?:.|\\n)*(?:\\n|\\Z)|\\A|\\Z)===\ncommit 6738276dff8a236ed4cd8d4abd376225ba0f9e77\nDate: Thu Jan 01 08:00:00 1970 [-+]0800\ninitial commit\n\n(?:(?:.|\\n)*(?:\\n|\\Z)|\\A|\\Z)']
+Actual: ===
+commit 8a1d86760158ab3d3d573893e81c0f470f2fe97a
+Date: Mon Jan 05 10:40:59 2026 +0000
+Two files
+
+===
+commit c283eee9fcca97aeab1eaabbaae92cec95a9ecae
+Date: Mon Jan 05 10:41:00 2026 +0000
+Add h
+
+
+samples/3-status-05.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', '']
+Actual: === Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+f.txt
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+
+samples/5-merge-03.in: 
+merge other: 
+Expected: ['Encountered a merge conflict.']
+Actual: 
+samples/5-merge-07.in: 
+commit "Reset f to notwug.txt": 
+Expected: []
+Actual: No changes added to the commit.
+
+samples/6-remote-02.in: 
+pull R1 master: 
+Expected: []
+Actual: A branch with that name does not exist.
+
+samples/6-status-05.in: 
+status: 
+Expected: ['=== Branches ===', '*master', '', '=== Staged Files ===', '', '=== Removed Files ===', '', '=== Modifications Not Staged For Commit ===', '', '=== Untracked Files ===', 'f.txt', '']
+Actual: === Branches ===
+*master
+
+=== Staged Files ===
+
+=== Removed Files ===
+
+=== Modifications Not Staged For Commit ===
+
+=== Untracked Files ===
+

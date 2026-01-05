@@ -11,7 +11,6 @@ public:
     static std::string readBlobContent(const std::string& blob_sha);
     
 private:
-    // 辅助函数
     static std::string findSplitPoint(const std::string& commit1, const std::string& commit2);
     static bool wouldMergeOverwriteUntrackedFiles(
         const std::map<std::string, std::string>& current_files,
