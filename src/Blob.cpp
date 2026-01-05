@@ -24,10 +24,8 @@ std::string Blob::getOid() const {
 }
 
 void Blob::save() const {
-    std::string content_str = getContentAsString();
-    std::string header = "blob " + std::to_string(content_str.size());
-    std::string full_data = header + '\0' + content_str;
-    
+    auto data= serialize();
+    std::string full_data(data.begin(), data.end());
     
     std::string oid = Utils::sha1(full_data);
     

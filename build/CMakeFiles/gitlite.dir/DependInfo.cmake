@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/c/Users/33964/Desktop/jiao/gitlite/main.cpp" "CMakeFiles/gitlite.dir/main.cpp.o" "gcc" "CMakeFiles/gitlite.dir/main.cpp.o.d"
   "/mnt/c/Users/33964/Desktop/jiao/gitlite/src/Blob.cpp" "CMakeFiles/gitlite.dir/src/Blob.cpp.o" "gcc" "CMakeFiles/gitlite.dir/src/Blob.cpp.o.d"
+  "/mnt/c/Users/33964/Desktop/jiao/gitlite/src/Branch.cpp" "CMakeFiles/gitlite.dir/src/Branch.cpp.o" "gcc" "CMakeFiles/gitlite.dir/src/Branch.cpp.o.d"
   "/mnt/c/Users/33964/Desktop/jiao/gitlite/src/Commit.cpp" "CMakeFiles/gitlite.dir/src/Commit.cpp.o" "gcc" "CMakeFiles/gitlite.dir/src/Commit.cpp.o.d"
   "/mnt/c/Users/33964/Desktop/jiao/gitlite/src/GitliteException.cpp" "CMakeFiles/gitlite.dir/src/GitliteException.cpp.o" "gcc" "CMakeFiles/gitlite.dir/src/GitliteException.cpp.o.d"
   "/mnt/c/Users/33964/Desktop/jiao/gitlite/src/Repository.cpp" "CMakeFiles/gitlite.dir/src/Repository.cpp.o" "gcc" "CMakeFiles/gitlite.dir/src/Repository.cpp.o.d"

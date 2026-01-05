@@ -18,6 +18,13 @@ public:
     static void checkoutBranch(const std::string& filename);
     static void checkoutFile(const std::string& filename);
     static void checkoutFileInCommit(const std::string& commit_id, const std::string& filename);
+    static void branch(const std::string& branch_name);
+    static void rmBranch(const std::string& branch_name);
+    static void reset(const std::string& commit_id);
+    static void merge(const std::string& branch_name);
+    static void push(const std::string& remote, const std::string& remote_branch);
+    static void pull(const std::string& remote, const std::string& remote_branch);
+    static void fetch(const std::string& remote, const std::string& remote_branch);
 };
 
 #endif // SOMEOBJ_H

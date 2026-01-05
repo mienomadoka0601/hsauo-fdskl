@@ -44,26 +44,7 @@ void logcommand::printCommitInfo(const std::string& commit_sha) {
 }
 
 std::string logcommand::formatTimestamp(const std::string& raw_timestamp) {
-    // raw_timestamp 格式: "2026-01-03 15:15:10 +0000" 或 "0 +0800"
-    
-    try {
-        // 如果是 Unix 时间戳 0
-        if (raw_timestamp.find("0 ") == 0) {
-            // 解析 "0 +0800"
-            std::istringstream iss(raw_timestamp);
-            std::string timestamp_str, timezone;
-            if (iss >> timestamp_str >> timezone) {
-                // 确保时区是4位
-                if (timezone.length() == 4 && (timezone[0] == '+' || timezone[0] == '-')) {
-                    // 使用固定的初始提交时间
-                    return "Thu Jan 01 08:00:00 1970 " + timezone;
-                }
-            }
-            // 默认返回
-            return "Thu Jan 01 08:00:00 1970 +0800";
-        }
-        
-        // 解析正常的时间戳格式
+        // 解析日期时间
         std::tm tm = {};
         std::istringstream iss(raw_timestamp);
         
@@ -83,46 +64,37 @@ std::string logcommand::formatTimestamp(const std::string& raw_timestamp) {
             tm.tm_sec = second;
             tm.tm_isdst = -1;
             
+            // 转换为 time_t
             std::time_t t = std::mktime(&tm);
+            
+            // 转换为本地时间结构
             std::tm* local_tm = std::localtime(&t);
             
+            // 格式化输出
             std::ostringstream oss;
-            oss.imbue(std::locale("C"));
+            oss.imbue(std::locale("C"));  // 使用英文区域
             
-            // 输出格式
+            // 输出格式: "Thu Jan 01 08:00:00 1970 +0800"
             oss << std::put_time(local_tm, "%a %b %d %H:%M:%S %Y ");
-            
-            // 确保时区是4位
-            if (timezone.length() == 5) {  // 如 "+0800"
-                oss << timezone;
-            } else if (timezone.length() == 1) {  // 如 "Z"
-                oss << "+0000";
-            } else {
-                // 尝试转换为4位
-                if (timezone[0] == '+' || timezone[0] == '-') {
-                    if (timezone.length() == 3) {  // 如 "+08"
-                        oss << timezone << "00";
-                    } else {
-                        oss << "+0000";  // 默认
-                    }
-                } else {
-                    oss << "+0000";
-                }
-            }
+            oss << timezone;
             
             std::string result = oss.str();
             
             // 确保日期是两位（前导0）
-            if (result.length() > 9 && result[8] == ' ') {
-                result.insert(8, "0");
+            // 查找 "Jan 1 " 并改为 "Jan 01 "
+            size_t month_end = result.find(' ', 4);  // 跳过 "Thu "
+            if (month_end != std::string::npos) {
+                size_t day_start = month_end + 1;
+                size_t day_end = result.find(' ', day_start);
+                if (day_end != std::string::npos) {
+                    std::string day_str = result.substr(day_start, day_end - day_start);
+                    if (day_str.length() == 1) {
+                        result.replace(day_start, 1, "0" + day_str);
+                    }
+                }
             }
             
             return result;
         }
-    } catch (...) {
-        // 解析失败
-    }
-    
-    // 默认返回
     return "Thu Jan 01 08:00:00 1970 +0800";
 }

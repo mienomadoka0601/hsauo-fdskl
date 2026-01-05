@@ -255,4 +255,13 @@ CMakeFiles/gitlite.dir/src/SomeObj.cpp.o: \
  /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/status.h \
  /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/find.h \
  /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/rm-remote.h \
- /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/checkout.h
+ /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/checkout.h \
+ /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/branch.h \
+ /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/Branch.h \
+ /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/rm-branch.h \
+ /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/reset.h \
+ /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/remote.h \
+ /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/merge.h \
+ /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/pull.h \
+ /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/push.h \
+ /mnt/c/Users/33964/Desktop/jiao/gitlite/src/../include/command/fetch.h

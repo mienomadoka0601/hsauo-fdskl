@@ -177,6 +177,30 @@ src/Blob.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/Blob.cpp.s
 .PHONY : src/Blob.cpp.s
 
+src/Branch.o: src/Branch.cpp.o
+.PHONY : src/Branch.o
+
+# target to build an object file
+src/Branch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/Branch.cpp.o
+.PHONY : src/Branch.cpp.o
+
+src/Branch.i: src/Branch.cpp.i
+.PHONY : src/Branch.i
+
+# target to preprocess a source file
+src/Branch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/Branch.cpp.i
+.PHONY : src/Branch.cpp.i
+
+src/Branch.s: src/Branch.cpp.s
+.PHONY : src/Branch.s
+
+# target to generate assembly for a file
+src/Branch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/gitlite.dir/build.make CMakeFiles/gitlite.dir/src/Branch.cpp.s
+.PHONY : src/Branch.cpp.s
+
 src/Commit.o: src/Commit.cpp.o
 .PHONY : src/Commit.o
 
@@ -840,6 +864,9 @@ help:
 	@echo "... src/Blob.o"
 	@echo "... src/Blob.i"
 	@echo "... src/Blob.s"
+	@echo "... src/Branch.o"
+	@echo "... src/Branch.i"
+	@echo "... src/Branch.s"
 	@echo "... src/Commit.o"
 	@echo "... src/Commit.i"
 	@echo "... src/Commit.s"

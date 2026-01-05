@@ -7,48 +7,34 @@
 #include <string>
 
 std::string Commit::getLatestVersionContent(const std::string& filename) {
-    std::cout << "DEBUG getLatestVersionContent: filename = " << filename << std::endl;
     
     std::string current_sha = getCurrentCommitSha();
-    std::cout << "DEBUG: current_sha = " << current_sha << std::endl;
     
     if (current_sha.empty()) {
-        std::cout << "DEBUG: No current commit SHA" << std::endl;
         return "";
     }
     
     auto file_blobs = loadFileBlobs(current_sha);
-    std::cout << "DEBUG: Found " << file_blobs.size() << " files in commit" << std::endl;
     
     auto it = file_blobs.find(filename);
     if (it == file_blobs.end()) {
-        std::cout << "DEBUG: File not found in commit" << std::endl;
         return "";
     }
     
     std::string blob_sha = it->second;
-    std::cout << "DEBUG: blob_sha = " << blob_sha << std::endl;
     
     std::string blob_path = Repository::getObjectsDir() + "/" + 
                            blob_sha.substr(0, 2) + "/" + 
                            blob_sha.substr(2);
-    std::cout << "DEBUG: blob_path = " << blob_path << std::endl;
     
     if (Utils::exists(blob_path)) {
-        std::cout << "DEBUG: Blob file exists" << std::endl;
         std::string content = Utils::readContentsAsString(blob_path);
-        std::cout << "DEBUG: Raw blob content size = " << content.size() << std::endl;
         
         size_t null_pos = content.find('\0');
         if (null_pos != std::string::npos) {
             std::string result = content.substr(null_pos + 1);
-            std::cout << "DEBUG: Extracted content size = " << result.size() << std::endl;
             return result;
-        } else {
-            std::cout << "DEBUG: No null character in blob" << std::endl;
         }
-    } else {
-        std::cout << "DEBUG: Blob file does not exist" << std::endl;
     }
     
     return "";
@@ -172,13 +158,31 @@ std::map<std::string, std::string> Commit::loadFileBlobs(const std::string& comm
 }
 void Commit::updateHead(const std::string& new_commit_sha) {
     std::string head_file = Utils::join(Repository::getGitliteDir(), "HEAD");
-    Utils::writeContents(head_file, new_commit_sha);
+    std::string head_content = Utils::readContentsAsString(head_file);
+    
+    // 清理换行符
+    head_content.erase(std::remove(head_content.begin(), head_content.end(), '\n'), head_content.end());
+    head_content.erase(std::remove(head_content.begin(), head_content.end(), '\r'), head_content.end());
+    
+    if (head_content.find("ref: refs/heads/") == 0) {
+        // HEAD 指向分支：更新分支引用，而不是 HEAD
+        std::string branch_name = head_content.substr(16);
+        std::string refs_dir = Utils::join(Repository::getGitliteDir(), "refs");
+        std::string heads_dir = Utils::join(refs_dir, "heads");
+        std::string branch_file = Utils::join(heads_dir, branch_name);
+        Utils::writeContents(branch_file, new_commit_sha + "\n");
+        // HEAD 文件保持不变（仍然指向分支）
+    } else {
+        // detached HEAD 状态：直接更新 HEAD
+        Utils::writeContents(head_file, new_commit_sha + "\n");
+    }
 }
 std::string Commit::getCurrentTimeString() {
     std::time_t now = std::time(nullptr);
+    std::tm* gmt = std::gmtime(&now);  // 使用 GMT 时间
     char buf[100];
-    std::strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", std::localtime(&now));
-    return std::string(buf);
+    std::strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", gmt);
+    return std::string(buf) + " +0000";
 }
 bool Commit::isFileTrackedInCurrentCommit(const std::string& filename) {
     std::string current_sha = getCurrentCommitSha();
@@ -255,61 +259,37 @@ std::string Commit::getCommitMessage(const std::string& commit_sha) {
     }
     
     std::string commit_content = content.substr(null_pos + 1);
-    
-    // 按行分割，保留原始顺序
-    std::vector<std::string> lines;
-    std::string line;
+    // 解析提交消息
     std::istringstream iss(commit_content);
+    std::string line;
+    bool in_message = false;
+    std::ostringstream message_stream;
     
     while (std::getline(iss, line)) {
-        // 清理行尾
-        if (!line.empty() && line.back() == '\r') {
-            line.pop_back();
-        }
-        lines.push_back(line);
-    }
-    size_t message_start = 0;
-    
-    for (size_t i = 0; i < lines.size(); i++) {
-        const std::string& current_line = lines[i];
-        
-        // 检查是否是头部行
-        bool is_header = false;
-        if (current_line.substr(0, 5) == "tree ") {
-            is_header = true;
-        } else if (current_line.substr(0, 7) == "parent ") {
-            is_header = true;
-        } else if (current_line.substr(0, 7) == "author ") {
-            is_header = true;
-        } else if (current_line.substr(0, 11) == "committer ") {
-            is_header = true;
+        if (line.empty()) {
+            in_message = true;
+            continue;
         }
         
-        if (is_header) {
-            // 更新消息开始位置为下一行
-            message_start = i + 1;
-        } else if (current_line.empty()) {
-            // 空行：如果是在头部之后，可能是分隔符
-            if (message_start > 0) {
-                // 跳过这个空行
-                message_start = i + 1;
+        if (!in_message) {
+            // 还在头部
+            if (line.find("tree ") == 0 || line.find("parent ") == 0 || 
+                line.find("author ") == 0 || line.find("committer ") == 0) {
+                continue;
             }
         }
-        // 否则，这行可能是消息的一部分
-    }
-    
-    // 收集消息
-    std::ostringstream message_stream;
-    for (size_t i = message_start; i < lines.size(); i++) {
-        if (!lines[i].empty()) {  // 跳过消息中的空行
+        
+        if (in_message) {
             if (message_stream.tellp() > 0) {
                 message_stream << "\n";
             }
-            message_stream << lines[i];
+            message_stream << line;
         }
     }
     
-    return message_stream.str();
+    std::string message = message_stream.str();
+    
+    return message;
 }
 std::string Commit::getCommitTimestamp(const std::string& commit_sha) {
     if (commit_sha.empty()) {

@@ -6,8 +6,13 @@ void AddCommand::add(const std::string& filename) {
         Utils::exitWithMessage("File does not exist.");
     }
 
+    // 读取文件内容
     std::string current_content = Utils::readContentsAsString(filename);
-    std::string current_sha = Utils::sha1(current_content);
+    
+    // 正确计算 blob SHA（与 Git 一致）
+    std::string header = "blob " + std::to_string(current_content.size());
+    std::string full_blob_data = header + '\0' + current_content;
+    std::string current_sha = Utils::sha1(full_blob_data);
     
     // 获取当前提交中的文件 blob SHA
     std::string current_commit_sha = Commit::getCurrentCommitSha();

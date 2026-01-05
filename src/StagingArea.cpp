@@ -65,15 +65,22 @@ std::vector<std::string> StagingArea::getStagedFiles() {
     if (!Utils::isDirectory(staging_root)) {
         return staged_files;
     }
-    for (const auto& entry : std::filesystem::directory_iterator(staging_root)) {
-        if (entry.path().filename() == "delete") {
-            continue;
+    
+    
+        for (const auto& entry : std::filesystem::directory_iterator(staging_root)) {
+            std::string path = entry.path().string();
+            std::string filename = entry.path().filename().string();
+            
+            if (filename == "delete") {
+                continue;
+            }
+            
+            if (entry.is_regular_file()) {
+                staged_files.push_back(filename);
+            }
         }
-        if (Utils::isFile(entry.path().string())) {
-            staged_files.push_back(entry.path().filename().string());
-        }
-    }
-
+    
+    
     return staged_files;
 }
 
@@ -81,15 +88,20 @@ std::vector<std::string> StagingArea::getStagedFiles() {
 std::vector<std::string> StagingArea::getFilesMarkedForDeletion() {
     std::vector<std::string> deleted_files;
     std::string delete_dir = getStagingDeleteDir();
-    if (!Utils::isDirectory(delete_dir)) {
+    
+    if (!Utils::exists(delete_dir)) {
         return deleted_files;
     }
-    for (const auto& entry : std::filesystem::directory_iterator(delete_dir)) {
-        if (Utils::isFile(entry.path().string())) {
-            deleted_files.push_back(entry.path().filename().string());
+    
+    // 使用递归目录迭代器
+    for (const auto& entry : std::filesystem::recursive_directory_iterator(delete_dir)) {
+        if (entry.is_regular_file()) {
+            // 使用标准库方法获取相对路径
+            std::filesystem::path relative_path = std::filesystem::relative(entry.path(), delete_dir);
+            deleted_files.push_back(relative_path.string());
         }
     }
-
+    
     return deleted_files;
 }
 // 检查暂存区是否为空
@@ -125,6 +137,12 @@ std::string StagingArea::getBlobShaForFile(const std::string& filename) {
     if (!Utils::isFile(staged_file_path)) {
         throw std::runtime_error("File not staged: " + filename);
     }
+    
     std::string content = Utils::readContentsAsString(staged_file_path);
-    return Utils::sha1(content);
+    
+    // 使用正确的 blob SHA 计算
+    std::string header = "blob " + std::to_string(content.size());
+    std::string full_blob_data = header + '\0' + content;
+    
+    return Utils::sha1(full_blob_data);
 }

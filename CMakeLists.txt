@@ -42,6 +42,7 @@ set(CORE_SOURCES
     src/SomeObj.cpp
     src/object.cpp
     src/Tree.cpp
+    src/Branch.cpp
 )
 
 # 工具类源文件（Utils、GitliteException 等）

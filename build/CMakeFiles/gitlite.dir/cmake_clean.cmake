@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/gitlite.dir/main.cpp.o.d"
   "CMakeFiles/gitlite.dir/src/Blob.cpp.o"
   "CMakeFiles/gitlite.dir/src/Blob.cpp.o.d"
+  "CMakeFiles/gitlite.dir/src/Branch.cpp.o"
+  "CMakeFiles/gitlite.dir/src/Branch.cpp.o.d"
   "CMakeFiles/gitlite.dir/src/Commit.cpp.o"
   "CMakeFiles/gitlite.dir/src/Commit.cpp.o.d"
   "CMakeFiles/gitlite.dir/src/GitliteException.cpp.o"

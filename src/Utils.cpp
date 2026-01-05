@@ -1,3 +1,4 @@
+
 #include "../include/Utils.h"
 #include <cstdlib>
 #include <iostream>
@@ -198,7 +199,12 @@ std::vector<unsigned char> Utils::readContents(const std::string& filepath) {
  *  in case of problems. */
 std::string Utils::readContentsAsString(const std::string& filepath) {
     auto contents = readContents(filepath);
-    return std::string(contents.begin(), contents.end());
+    std::string result;
+    result.reserve(contents.size());
+    for (unsigned char c : contents) {
+        result.push_back(static_cast<char>(c));
+    }
+    return result;
 }
 
 /** Write the result of concatenating the bytes in CONTENTS to FILE,
@@ -340,4 +346,14 @@ uint64_t Utils::getCurrentTimestamp() {
     auto now = std::chrono::system_clock::now();
     auto duration = now.time_since_epoch();
     return std::chrono::duration_cast<std::chrono::seconds>(duration).count();
+}
+// String split utility
+std::vector<std::string> Utils::split(const std::string& s, char delim) {
+    std::vector<std::string> result;
+    std::stringstream ss(s);
+    std::string item;
+    while (std::getline(ss, item, delim)) {
+        result.push_back(item);
+    }
+    return result;
 }

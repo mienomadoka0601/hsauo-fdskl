@@ -40,6 +40,8 @@ namespace SHA1 {
 
 class Utils {
 public:
+    // String split utility
+    static std::vector<std::string> split(const std::string& s, char delim);
     static const int UID_LENGTH = 40;
 
     // SHA-1 hash functions

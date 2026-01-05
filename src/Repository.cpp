@@ -32,8 +32,23 @@ std::string Repository::getGitliteDir() {
 }
 std::string Repository::getObjectsDir() {
     std::string gitlite_dir = getGitliteDir();
-    if (!Utils::isDirectory(gitlite_dir)) {
-        return "";
+    
+    // 检查 .gitlite 目录是否存在
+    if (!Utils::exists(gitlite_dir)) {
+        throw GitliteException("Not in a Gitlite repository");
     }
-    return Utils::join(gitlite_dir, "objects");
+    
+    if (!Utils::isDirectory(gitlite_dir)) {
+        throw GitliteException(".gitlite is not a directory");
+    }
+    
+    std::string objects_dir = Utils::join(gitlite_dir, "objects");
+    
+    // 可选：确保 objects 目录存在
+    if (!Utils::exists(objects_dir)) {
+        // 如果需要自动创建
+        Utils::createDirectories(objects_dir);
+    }
+    
+    return objects_dir;
 }
